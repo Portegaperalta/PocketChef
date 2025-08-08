@@ -1,11 +1,15 @@
 import { Star } from "lucide-react"
 
-export default function RatingLabel() {
+type RatingLableProps = {
+  rating: number
+}
+
+export default function RatingLabel(props: RatingLableProps) {
   return (
     <div className="rating-label bg-(--clr-primary) flex gap-1 items-center
     rounded-full py-1 px-2">
       <Star size={15} color="#ffff" />
-      <p className="text-(--clr-white) text-[.8rem] font-[600]">4.9</p>
+      <p className="text-(--clr-white) text-[.8rem] font-[600]">{props.rating}</p>
     </div>
   )
 }

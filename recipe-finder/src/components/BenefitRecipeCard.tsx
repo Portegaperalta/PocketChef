@@ -23,7 +23,7 @@ export default function BenefitRecipeCard(props: BenefitRecipeCardProps) {
           </p>
         </div>
         <div className="benefit-recipe-rating">
-          <RatingLabel />
+          <RatingLabel rating={props.recipeRating} />
         </div>
       </div>
     </div>
