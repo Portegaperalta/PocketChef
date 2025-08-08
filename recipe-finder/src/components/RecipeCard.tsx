@@ -6,11 +6,14 @@ export default function RecipeCard() {
     <div className="recipe-card">
       <div className="recipe-card-top relative pb-20">
         <div className="recipe-image absolute">
-          <img src={RecipeImage} alt="recipe image" />
+          <img src={RecipeImage}
+            alt="recipe image"
+            className=""
+          />
         </div>
       </div>
-      <div className="recipe-card-bottom px-4 pt-26 pb-4 flex flex-col shadow-xl
-      rounded-t-full rounded-bl-3xl rounded-br-3xl">
+      <div className="recipe-card-bottom px-4 pt-26 pb-4 flex flex-col
+       shadow-lg rounded-t-full">
         <div className="recipe-card-name">
           <h3 className="text-(--clr-secondary) text-[1.4rem] font-[600]">
             Keto Salad
