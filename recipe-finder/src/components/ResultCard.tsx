@@ -3,8 +3,9 @@ import SaveRecipeButton from './ui/SaveRecipeButton'
 
 type ResultCardProps = {
   Name: string,
-  IngredientsSummary: string,
-  BenefitSummary: string,
+  IngredientsSummary?: string,
+  BenefitSummary?: string,
+  imageUrl?: string,
 }
 
 export default function ResultCard(props: ResultCardProps) {

@@ -1,14 +1,21 @@
 import { Search } from "lucide-react"
-import { useState, useEffect, type ChangeEvent } from "react"
+import { useState } from "react"
 
 export default function SearchRecipeForm() {
+  let [searchQuery, setSearchQuery] = useState("")
+
+  const handleSearch = (e) => {
+    setSearchQuery(searchQuery = e.target.value)
+    console.log(searchQuery)
+  }
 
   return (
     <section className="search-recipe-form hidden md:inline-block">
       <div className="search-recipe-form-content">
         <form
+          id="searchRecipeForm"
           action="#"
-
+          onSubmit={handleSearch}
           className=" py-2 px-2 flex flex-row 
           items-center gap-3 w-full max-w-64 bg-(--clr-white) 
           border-2 border-(--clr-quick-silver) rounded-sm">
