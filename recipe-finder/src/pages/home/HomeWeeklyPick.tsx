@@ -4,7 +4,11 @@ import WeeklyPickImage from "../../images/weekly-pick-img.jpg"
 
 export default function HomeWeeklyPick() {
   return (
-    <div style={{ backgroundImage: `url(${WeeklyPickImage})` }}
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+      style={{ backgroundImage: `url(${WeeklyPickImage})` }}
       className="home-weekly-pick w-full max-w-152 bg-no-repeat bg-cover rounded-2xl">
       <div className="weekly-pick-top py-8 px-4 flex justify-between">
         <div className="bg-(--clr-bg-blur) py-1 px-2 rounded-md">

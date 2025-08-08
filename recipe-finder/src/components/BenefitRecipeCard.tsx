@@ -10,11 +10,16 @@ type BenefitRecipeCardProps = {
   recipeImageUrl: string
 }
 
+AOS.init();
+
 export default function BenefitRecipeCard(props: BenefitRecipeCardProps) {
   return (
-    <a href="#"
-      className='hover:translate-x-2 duration-200 ease-in-out'>
-      <div className="benefit-recipe-card py-2 px-4 flex gap-4 items-center 
+    <a href="#">
+      <div
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        data-aos-once="true"
+        className="benefit-recipe-card py-2 px-4 flex gap-4 items-center 
      bg-(--clr-white) shadow-lg rounded-lg">
         <div className="benefit-recipe-image py-1">
           <img src={props.recipeImageUrl}
@@ -38,6 +43,6 @@ export default function BenefitRecipeCard(props: BenefitRecipeCardProps) {
           <RatingLabel rating={props.recipeRating} />
         </div>
       </div>
-    </a>
+    </a >
   )
 }
