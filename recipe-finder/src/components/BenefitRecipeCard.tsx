@@ -1,4 +1,3 @@
-import BenefitRecipeImage from '../images/tuna-salad-img.png'
 import { CircleCheck } from 'lucide-react'
 import RatingLabel from './ui/RatingLabel'
 

@@ -5,42 +5,42 @@ import TunaSaladImage from "../../images/tuna-salad-img.png"
 import CaesarSaladImage from "../../images/caesar-salad-img.png"
 
 type recipeWithBenefit = {
-  recipeName: string,
-  recipeFeature: string,
-  recipeRating: number,
-  recipeImageUrl: string
+  Name: string,
+  Feature: string,
+  Rating: number,
+  ImageUrl: string
 }
 
 const recipesWithBenefits: recipeWithBenefit[] = [
   {
-    recipeName: "Mung Bean Salad",
-    recipeFeature: "Reduces Chronic Disease Risk",
-    recipeRating: 4.3,
-    recipeImageUrl: MungBeanSaladImage,
+    Name: "Mung Bean Salad",
+    Feature: "Reduces Chronic Disease Risk",
+    Rating: 4.3,
+    ImageUrl: MungBeanSaladImage,
   },
   {
-    recipeName: "Pasta Salad",
-    recipeFeature: "Protects against cancer",
-    recipeRating: 4.1,
-    recipeImageUrl: PastaSaladImage,
+    Name: "Pasta Salad",
+    Feature: "Protects against cancer",
+    Rating: 4.1,
+    ImageUrl: PastaSaladImage,
   },
   {
-    recipeName: "Tuna salad",
-    recipeFeature: "Helps with Blood Pressure",
-    recipeRating: 4.8,
-    recipeImageUrl: TunaSaladImage,
+    Name: "Tuna salad",
+    Feature: "Helps with Blood Pressure",
+    Rating: 4.8,
+    ImageUrl: TunaSaladImage,
   },
   {
-    recipeName: "Mung Bean Salad",
-    recipeFeature: "Reduces Chronic Disease Risk",
-    recipeRating: 4.3,
-    recipeImageUrl: MungBeanSaladImage,
+    Name: "Mung Bean Salad",
+    Feature: "Reduces Chronic Disease Risk",
+    Rating: 4.3,
+    ImageUrl: MungBeanSaladImage,
   },
   {
-    recipeName: "Caesar Salad",
-    recipeFeature: "Boosts Immunity System",
-    recipeRating: 3.4,
-    recipeImageUrl: CaesarSaladImage,
+    Name: "Caesar Salad",
+    Feature: "Boosts Immunity System",
+    Rating: 3.4,
+    ImageUrl: CaesarSaladImage,
   }
 ]
 
@@ -50,10 +50,10 @@ export default function BenefitRecipeList() {
       {
         recipesWithBenefits.map((recipe) => (
           <BenefitRecipeCard
-            recipeName={recipe.recipeName}
-            recipeFeature={recipe.recipeFeature}
-            recipeRating={recipe.recipeRating}
-            recipeImageUrl={recipe.recipeImageUrl}
+            recipeName={recipe.Name}
+            recipeFeature={recipe.Feature}
+            recipeRating={recipe.Rating}
+            recipeImageUrl={recipe.ImageUrl}
           />
         ))
       }
