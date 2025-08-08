@@ -1,8 +1,10 @@
+import AppLogo from "./AppLogo"
+
 export default function Header() {
   return (
-    <header>
+    <header className="bg-(--clr-primary)">
       <div className="header-content">
-
+        <AppLogo />
       </div>
     </header>
   )
