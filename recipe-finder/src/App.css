@@ -1,0 +1,12 @@
+:root {
+  --clr-primary: #F6B100;
+  --clr-secondary: #181A20;
+  --clr-white: #FFFFFF;
+  --clr-bright-gray: #EEEEEE;
+  --clr-apple-red: #FF0B0B;
+  --clr-white-soke: #F5F5F5;
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+}
