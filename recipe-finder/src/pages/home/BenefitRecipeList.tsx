@@ -52,7 +52,7 @@ const recipesWithBenefits: recipeWithBenefit[] = [
 
 export default function BenefitRecipeList() {
   return (
-    <div className="benefit-recipe-list flex flex-col gap-4 
+    <div className="benefit-recipe-list flex flex-col gap-6 
     md:gap-6 lg:gap-12">
       {
         recipesWithBenefits.map((recipe) => (

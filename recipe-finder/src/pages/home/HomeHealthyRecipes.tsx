@@ -44,7 +44,7 @@ const featuresRecipes: healthyRecipe[] = [
 
 export default function HomeHealthyRecipes() {
   return (
-    <section className="home-healthy-recipes">
+    <section className="home-healthy-recipes mt-4 md:mt-6 lg:mt-8">
       <div className="healthy-recipes-top">
         <div className="healthy-recipes-title">
           <h2 className="text-(--clr-secondary) text-[1.6rem] font-[600]">
