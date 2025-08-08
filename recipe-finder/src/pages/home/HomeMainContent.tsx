@@ -15,7 +15,7 @@ export default function HomeMainContent() {
           See all
         </a>
       </div>
-      <div className="content grid grid-flow-row gap-10 md:mt-10 md:grid-flow-col
+      <div className="content grid grid-flow-row md:gap-20 lg:gap-40 md:mt-10 md:grid-flow-col
        md:grid-cols-2">
         <div className="row-span-2 grid-rows-subgrid">
           <BenefitRecipeList />

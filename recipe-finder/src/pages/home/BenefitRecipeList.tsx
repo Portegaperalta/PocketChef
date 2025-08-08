@@ -5,6 +5,7 @@ import TunaSaladImage from "../../images/tuna-salad-img.png"
 import CaesarSaladImage from "../../images/caesar-salad-img.png"
 
 type recipeWithBenefit = {
+  id: number,
   Name: string,
   Feature: string,
   Rating: number,
@@ -13,30 +14,35 @@ type recipeWithBenefit = {
 
 const recipesWithBenefits: recipeWithBenefit[] = [
   {
+    id: 1,
     Name: "Mung Bean Salad",
     Feature: "Reduces Chronic Disease Risk",
     Rating: 4.3,
     ImageUrl: MungBeanSaladImage,
   },
   {
+    id: 2,
     Name: "Pasta Salad",
     Feature: "Protects against cancer",
     Rating: 4.1,
     ImageUrl: PastaSaladImage,
   },
   {
+    id: 3,
     Name: "Tuna salad",
     Feature: "Helps with Blood Pressure",
     Rating: 4.8,
     ImageUrl: TunaSaladImage,
   },
   {
+    id: 4,
     Name: "Mung Bean Salad",
     Feature: "Reduces Chronic Disease Risk",
     Rating: 4.3,
     ImageUrl: MungBeanSaladImage,
   },
   {
+    id: 5,
     Name: "Caesar Salad",
     Feature: "Boosts Immunity System",
     Rating: 3.4,
@@ -46,10 +52,12 @@ const recipesWithBenefits: recipeWithBenefit[] = [
 
 export default function BenefitRecipeList() {
   return (
-    <div className="benefit-recipe-list flex flex-col gap-4 md:gap-6 lg:gap-8">
+    <div className="benefit-recipe-list flex flex-col gap-4 
+    md:gap-6 lg:gap-12">
       {
         recipesWithBenefits.map((recipe) => (
           <BenefitRecipeCard
+            key={recipe.id}
             recipeName={recipe.Name}
             recipeFeature={recipe.Feature}
             recipeRating={recipe.Rating}

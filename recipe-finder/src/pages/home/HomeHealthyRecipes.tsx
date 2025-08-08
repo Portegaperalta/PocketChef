@@ -3,6 +3,7 @@ import KetoSaladCardImg from "../../images/recipe-img1.svg"
 import SewersSaladCardImg from '../../images/sewers-salad-card-img.svg'
 
 type healthyRecipe = {
+  id: number,
   Name: string,
   ingredients?: string,
   ingredientsSumary: string,
@@ -12,24 +13,28 @@ type healthyRecipe = {
 
 const featuresRecipes: healthyRecipe[] = [
   {
+    id: 1,
     Name: "Keto Salad",
     ingredientsSumary: "Beans & Fruits",
     Rating: 4.5,
     ImageUrl: KetoSaladCardImg,
   },
   {
+    id: 2,
     Name: "Sewers Salad",
     ingredientsSumary: "Chicken & dal",
     Rating: 4.5,
     ImageUrl: SewersSaladCardImg,
   },
   {
+    id: 3,
     Name: "Keto Salad",
     ingredientsSumary: "Beans & Fruits",
     Rating: 4.5,
     ImageUrl: KetoSaladCardImg,
   },
   {
+    id: 4,
     Name: "Sewers Salad",
     ingredientsSumary: "Chicken & dal",
     Rating: 4.5,
@@ -59,7 +64,9 @@ export default function HomeHealthyRecipes() {
       md:justify-between flex-wrap">
         {
           featuresRecipes.map((recipe => (
-            <RecipeCard Name={recipe.Name}
+            <RecipeCard
+              key={recipe.id}
+              Name={recipe.Name}
               ingredientsSumary={recipe.ingredientsSumary}
               Rating={recipe.Rating}
               ImageUrl={recipe.ImageUrl}
