@@ -1,5 +1,7 @@
 import { CircleCheck } from 'lucide-react'
 import RatingLabel from './ui/RatingLabel'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 type BenefitRecipeCardProps = {
   recipeName: string,
