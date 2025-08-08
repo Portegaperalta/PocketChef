@@ -1,4 +1,41 @@
 import RecipeCard from "../../components/RecipeCard";
+import KetoSaladCardImg from "../../images/recipe-img1.svg"
+import SewersSaladCardImg from '../../images/sewers-salad-card-img.svg'
+
+type healthyRecipe = {
+  Name: string,
+  ingredients?: string,
+  ingredientsSumary: string,
+  Rating: number,
+  ImageUrl: string,
+}
+
+const featuresRecipes: healthyRecipe[] = [
+  {
+    Name: "Keto Salad",
+    ingredientsSumary: "Beans & Fruits",
+    Rating: 4.5,
+    ImageUrl: KetoSaladCardImg,
+  },
+  {
+    Name: "Sewers Salad",
+    ingredientsSumary: "Chicken & dal",
+    Rating: 4.5,
+    ImageUrl: SewersSaladCardImg,
+  },
+  {
+    Name: "Keto Salad",
+    ingredientsSumary: "Beans & Fruits",
+    Rating: 4.5,
+    ImageUrl: KetoSaladCardImg,
+  },
+  {
+    Name: "Sewers Salad",
+    ingredientsSumary: "Chicken & dal",
+    Rating: 4.5,
+    ImageUrl: SewersSaladCardImg,
+  },
+]
 
 export default function HomeHealthyRecipes() {
   return (
@@ -20,10 +57,15 @@ export default function HomeHealthyRecipes() {
       </div>
       <div className="healthy-recipes-bottom flex flex-row justify-center
       md:justify-between flex-wrap">
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
+        {
+          featuresRecipes.map((recipe => (
+            <RecipeCard Name={recipe.Name}
+              ingredientsSumary={recipe.ingredientsSumary}
+              Rating={recipe.Rating}
+              ImageUrl={recipe.ImageUrl}
+            />
+          )))
+        }
       </div>
     </section>
   )
