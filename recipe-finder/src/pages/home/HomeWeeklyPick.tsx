@@ -1,13 +1,12 @@
 import AddToFavoriteButton from "../../components/ui/AddToFavoriteButton";
 import StartCookButton from "../../components/ui/StartCookButton";
-import WeeklyPickImage from "../../images/weekly-bg.png"
+import WeeklyPickImage from "../../images/weekly-pick-img.jpg"
 
 export default function HomeWeeklyPick() {
   return (
     <div style={{ backgroundImage: `url(${WeeklyPickImage})` }}
-      className="home-weekly-pick w-full py-23 px-12 
-      bg-no-repeat bg-cover">
-      <div className="weekly-pick-top flex justify-between">
+      className="home-weekly-pick w-full max-w-152 bg-no-repeat bg-cover rounded-2xl">
+      <div className="weekly-pick-top py-8 px-4 flex justify-between">
         <div className="bg-(--clr-bg-blur) py-1 px-2 rounded-md">
           <AddToFavoriteButton />
         </div>
@@ -15,7 +14,8 @@ export default function HomeWeeklyPick() {
           <StartCookButton />
         </div>
       </div>
-      <div className="weekly-pick-bottom pt-30">
+      <div className="weekly-pick-bottom pt-40 pb-10 px-4 
+      bg-gradient-to-t from-black to-transparent rounded-b-2xl">
         <h3 className="weekly-pick-title text-[1.4rem] text-(--clr-white) lg:text-[1.8rem]">
           Weekly pick
         </h3>
