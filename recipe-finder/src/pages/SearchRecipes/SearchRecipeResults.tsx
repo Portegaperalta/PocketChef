@@ -1,11 +1,11 @@
 import ResultCard from "../../components/ResultCard";
-import { useState, useEffect, type ChangeEvent } from "react"
+import { useState, useEffect, } from "react"
 import { fetchSearchResults } from "../../api/spoonacularResults";
 
 type Recipe = {
   id: number,
   title: string,
-  imageUrl: string,
+  image: string,
   imageType: string,
 }
 
@@ -25,7 +25,6 @@ export default function SearchRecipeResults({ query }: Props) {
     try {
       const data = await fetchSearchResults(query)
       setRecipes(data)
-      console.log(data)
     } catch (error) {
       console.log(error)
     }
@@ -39,6 +38,7 @@ export default function SearchRecipeResults({ query }: Props) {
             <ResultCard
               key={recipe.id}
               Name={recipe.title}
+              image={recipe.image}
             />
           ))
         }
