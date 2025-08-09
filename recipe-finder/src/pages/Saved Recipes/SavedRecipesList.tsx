@@ -1,7 +1,9 @@
 export default function SavedRecipesList() {
   return (
-    <section className="saved-recipes-list">
+    <div className="saved-recipes-list">
+      <ul id="savedRecipesList">
 
-    </section>
+      </ul>
+    </div>
   )
 }

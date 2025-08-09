@@ -62,7 +62,7 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link to="">
+              <Link to="/Saved-Recipes">
                 <div className="saved-recipes-link flex flex-row gap-1">
                   <Bookmark color="#FFFFFF" />
                   <p className="text-(--clr-white) text-[1.1rem] font-[500]">
