@@ -1,6 +1,6 @@
 import AppLogo from "./AppLogo"
 import DropdownMenuButton from "./ui/DropdownMenuButton"
-import SearchBar from "./ui/SearchBar"
+import HeaderSearchBar from "./ui/HeaderSearchBar"
 import HeaderOptions from "./HeaderOptions"
 
 export default function Header() {
@@ -13,9 +13,9 @@ export default function Header() {
           <AppLogo />
           <div className=""></div>
         </div>
-        <div className="header-content-right flex">
-          <div className="header-content-search w-full md:hidden">
-            <SearchBar />
+        <div className="header-content-right">
+          <div className="header-content-search md:hidden">
+            <HeaderSearchBar />
           </div>
           <div className="header-content-options">
             <HeaderOptions />
