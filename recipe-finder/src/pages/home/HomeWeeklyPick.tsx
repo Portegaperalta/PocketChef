@@ -1,4 +1,4 @@
-import AddToFavoriteButton from "../../components/ui/AddToFavoriteButton";
+import { Bookmark } from "lucide-react";
 import StartCookButton from "../../components/ui/StartCookButton";
 import WeeklyPickImage from "../../images/weekly-pick-img.jpg"
 
@@ -12,7 +12,7 @@ export default function HomeWeeklyPick() {
       className="home-weekly-pick w-full max-w-152 bg-no-repeat bg-cover rounded-2xl">
       <div className="weekly-pick-top py-8 px-4 flex justify-between">
         <div className="bg-(--clr-bg-blur) py-1 px-2 rounded-md">
-          <AddToFavoriteButton />
+          <Bookmark color="#FFFF" />
         </div>
         <div className="">
           <StartCookButton />
