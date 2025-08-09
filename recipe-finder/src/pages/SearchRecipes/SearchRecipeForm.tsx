@@ -1,12 +1,20 @@
 import { Search } from "lucide-react"
 import { useState } from "react"
 
-export default function SearchRecipeForm() {
+type Props = {
+  onSearch: (query: string) => void
+}
+
+export default function SearchRecipeForm({ onSearch }: Props) {
   let [searchQuery, setSearchQuery] = useState("")
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(searchQuery = e.target.value)
-    console.log(searchQuery)
+  }
+
+  const handleFormSubmission = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    onSearch(searchQuery)
   }
 
   return (
@@ -15,11 +23,12 @@ export default function SearchRecipeForm() {
         <form
           id="searchRecipeForm"
           action="#"
-          onSubmit={handleSearch}
-          className=" py-2 px-2 flex flex-row 
-          items-center gap-3 w-full max-w-64 bg-(--clr-white) 
-          border-2 border-(--clr-quick-silver) rounded-sm">
+          onSubmit={handleFormSubmission}
+          className=" py-2 px-2 flex flex-row items-center gap-3
+           w-full max-w-64 bg-(--clr-white) border-2 border-(--clr-quick-silver)
+          rounded-sm">
           <input type="text"
+            onChange={handleSearch}
             placeholder="Search recipes"
             className="text-(--clr-secondary) font-[500] outline-none"
           />
