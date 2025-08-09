@@ -6,6 +6,7 @@ import Home from './pages/home/Home'
 import SearchRecipes from './pages/SearchRecipes/SearchRecipes'
 import SavedRecipes from './pages/Saved Recipes/SavedRecipes'
 import UserProfile from './pages/UserProfile/UserProfile'
+import RecipeInfo from './components/RecipeInfo'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Search-Recipe' element={<SearchRecipes />} />
+        <Route path='/Recipe-Info' element={<RecipeInfo />} />
         <Route path='/Saved-Recipes' element={<SavedRecipes />} />
         <Route path='/Profile' element={<UserProfile />} />
       </Routes>

@@ -15,6 +15,7 @@ type Props = {
 
 export default function SearchRecipeResults({ query }: Props) {
   const [recipes, setRecipes] = useState<Recipe[]>([])
+
   useEffect(() => {
     if (query) {
       handleSearch()
