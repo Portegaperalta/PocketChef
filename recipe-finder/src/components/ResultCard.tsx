@@ -11,9 +11,11 @@ type ResultCardProps = {
 export default function ResultCard(props: ResultCardProps) {
   return (
     <div className="result-card py-2 px-4 flex gap-4 items-center
-     justify-between bg-(--clr-white) w-full max-w-120 shadow-lg rounded-lg">
+     justify-between bg-(--clr-white) w-full max-w-120 shadow-lg rounded-lg
+     lg:max-w-160
+     ">
       <div className="benefit-recipe-img">
-        <img className='w-full max-w-50 rounded-md' src={props.image} alt={`${props.Name} image`} />
+        <img className='w-full max-w-26 lg:max-w-50 rounded-md' src={props.image} alt={`${props.Name} image`} />
       </div>
       <div className="benefit-recipe-info lg:basis-130 flex 
       items-center">

@@ -25,6 +25,7 @@ export default function SearchRecipeResults({ query }: Props) {
     try {
       const data = await fetchSearchResults(query)
       setRecipes(data)
+      console.log(data)
     } catch (error) {
       console.log(error)
     }
