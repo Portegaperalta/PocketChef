@@ -8,15 +8,17 @@ export default function SearchRecipe() {
 
   return (
     <main className="mt-4 px-6 lg:px-30">
-      <SearchRecipeForm onSearch={(query => setSearchQuery(query))} />
-      <div className="searh-query-title">
-        <p className={`text-(--clr-secondary) text-[1.4rem] font-[600]
+      <div className="search-recipes-content flex flex-col">
+        <SearchRecipeForm onSearch={(query => setSearchQuery(query))} />
+        <div className="searh-query-title">
+          <p className={`text-(--clr-secondary) text-[1.4rem] font-[600]
           mt-4 ${searchQuery === "" ? `hidden` : `inline-block`}`}>
-          {`Results for: ${searchQuery}`}
-        </p>
+            {`Results for: ${searchQuery}`}
+          </p>
+        </div>
+        <SearchRecipeResults query={searchQuery} />
+        <HomeMainAdd />
       </div>
-      <SearchRecipeResults query={searchQuery} />
-      <HomeMainAdd />
     </main>
   )
 }
