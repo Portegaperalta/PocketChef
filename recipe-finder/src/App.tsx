@@ -1,15 +1,19 @@
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Home from './pages/home/Home'
-import SearchRecipe from './pages/SearchRecipes/SearchRecipes'
+import SearchRecipes from './pages/SearchRecipes/SearchRecipes'
 
 function App() {
 
   return (
     <>
       <Header />
-      <SearchRecipe />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/Search-Recipe' element={<SearchRecipes />} />
+      </Routes>
       <Footer />
     </>
   )
