@@ -26,7 +26,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="header-dropdown-menu bg-(--clr-primary)">
+      <div className="header-dropdown-menu md:hidden bg-(--clr-primary)">
         <nav>
           <ul className="flex flex-col gap-6">
             <li>
