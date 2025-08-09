@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Home from './pages/home/Home'
 import SearchRecipes from './pages/SearchRecipes/SearchRecipes'
 import SavedRecipes from './pages/Saved Recipes/SavedRecipes'
+import UserProfile from './pages/UserProfile/UserProfile'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/Search-Recipe' element={<SearchRecipes />} />
         <Route path='/Saved-Recipes' element={<SavedRecipes />} />
+        <Route path='/Profile' element={<UserProfile />} />
       </Routes>
       <Footer />
     </>
