@@ -31,10 +31,6 @@ export default function ResultCard(props: ResultCardProps) {
           font-[500]'>
               {props.IngredientsSummary}
             </p>
-            <p className='text-(--clr-primary) text-[.9rem] font-[500] 
-          flex gap-1 items-center md:text-[1rem] lg:text-[1.1rem] '>
-              <CircleCheck /> {props.BenefitSummary}
-            </p>
           </a>
         </div>
       </div>
