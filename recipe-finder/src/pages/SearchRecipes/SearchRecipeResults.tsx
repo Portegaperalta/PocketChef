@@ -32,7 +32,7 @@ export default function SearchRecipeResults({ query }: Props) {
   }
 
   return (
-    <section className="search-recipe-results mt-10 mb-40">
+    <section className="search-recipe-results mt-10 mb-20">
       <div className="search-recipe-results-feed flex flex-col gap-8">
         {
           recipes.map((recipe) => (
