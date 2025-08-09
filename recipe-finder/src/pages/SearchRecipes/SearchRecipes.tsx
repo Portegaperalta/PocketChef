@@ -7,7 +7,7 @@ export default function SearchRecipe() {
   const [searchQuery, setSearchQuery] = useState("")
 
   return (
-    <main className="mt-4 px-6 lg:px-30">
+    <main className="relative mt-4 px-6 lg:px-30">
       <div className="search-recipes-content flex flex-col">
         <SearchRecipeForm onSearch={(query => setSearchQuery(query))} />
         <div className="searh-query-title">

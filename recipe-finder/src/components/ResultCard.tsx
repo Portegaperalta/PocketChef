@@ -1,4 +1,3 @@
-import { CircleCheck } from 'lucide-react'
 import SaveRecipeButton from './ui/SaveRecipeButton'
 
 type ResultCardProps = {
