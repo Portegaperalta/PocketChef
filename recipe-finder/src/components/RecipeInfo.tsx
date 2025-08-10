@@ -1,26 +1,25 @@
+import { useEffect, useState } from 'react'
 import recipeImage from '../images/weekly-pick-img.jpg'
-
-const recipe = {
-  name: "Tuna Salad",
-  ingredients: ["Tuna", "Beans", "Cabbage"],
-  image: recipeImage,
-}
+import FetchRecipeById from '@/api/FetchRecipeById'
 
 export default function RecipeInfo() {
+
+  const [recipeInfo, setRecipeInfo] = useState([])
+
   return (
     <main className="mt-10 px-6 lg:px-30">
       <div className="recipe-info-content">
         <div className="recipe-info-top">
           <div className="recipe-info-name">
             <h2 className="text-(--clr-secondary) text-[1.6rem] font-[600]">
-              {recipe.name}
+              Tuna Salad
             </h2>
           </div>
         </div>
         <div className="recipe-info-middle mt-6 md:flex md:gap-10">
           <div className="recipe-info-image">
             <img
-              src={recipe.image}
+              src={recipeImage}
               alt="recipe image"
               className='w-full max-w-100 lg:max-w-120 rounded-md'
             />

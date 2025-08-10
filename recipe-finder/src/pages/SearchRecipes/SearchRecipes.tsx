@@ -13,7 +13,7 @@ export default function SearchRecipe() {
         <div className="searh-query-title">
           <p className={`text-(--clr-secondary) text-[1.4rem] font-[600]
           mt-4 ${searchQuery === "" ? `hidden` : `inline-block`}`}>
-            {`Results for: ${searchQuery}`}
+            {`Results for ${searchQuery} :`}
           </p>
         </div>
         <SearchRecipeResults query={searchQuery} />

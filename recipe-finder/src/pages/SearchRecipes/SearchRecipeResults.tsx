@@ -16,12 +16,6 @@ type Props = {
 export default function SearchRecipeResults({ query }: Props) {
   const [recipes, setRecipes] = useState<Recipe[]>([])
 
-  useEffect(() => {
-    if (query) {
-      handleSearch()
-    }
-  }, [query])
-
   const handleSearch = async () => {
     try {
       const data = await fetchSearchResults(query)
@@ -31,6 +25,12 @@ export default function SearchRecipeResults({ query }: Props) {
       console.log(error)
     }
   }
+
+  useEffect(() => {
+    if (query) {
+      handleSearch()
+    }
+  }, [query])
 
   return (
     <section className="search-recipe-results mt-10 mb-20">
