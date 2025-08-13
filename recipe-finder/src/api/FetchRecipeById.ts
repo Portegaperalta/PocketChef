@@ -14,7 +14,6 @@ export default async function FetchRecipeById(id: number) {
     const baseUrl = `https://api.spoonacular.com/recipes/${id}/information?&apiKey=${apiKey}`
     const response = await axios.get(baseUrl, config)
     const recipeData = await response.data
-    console.log(recipeData)
     return recipeData
   }
   catch (error) {
