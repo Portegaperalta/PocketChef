@@ -1,19 +1,44 @@
 import { useEffect, useState } from 'react'
-import recipeImage from '../images/weekly-pick-img.jpg'
 import FetchRecipeById from '@/api/FetchRecipeById'
 import { Skeleton } from "@/components/ui/skeleton"
 
+type Ingredient = {
+  id: number,
+  aisle: string,
+  image: string,
+  consistency: string,
+  name: string,
+  nameClean: string,
+  original: string,
+  originalName: string,
+  amount: number,
+  unit: string,
+  meta: [],
+  measures: {
+    us: {
+      amount: number,
+      unitShort: string,
+      unitLong: string
+    },
+    metric: {
+      amount: number,
+      unitShort: string,
+      unitLong: string,
+    }
+  }
+}
+
 export default function RecipeInfo() {
 
-  const [recipeInfo, setRecipeInfo] = useState(null)
-
-  const giveRecipeInfo = async () => {
-    const recipeData = await FetchRecipeById(649195)
-    setRecipeInfo(recipeData)
-  }
+  const [recipeInfo, setRecipeInfo] = useState<any>(null)
 
   useEffect(() => {
-    console.log(recipeInfo)
+    const giveRecipeInfo = async () => {
+      const recipeData = await FetchRecipeById(649195)
+      setRecipeInfo(recipeData)
+      console.log(recipeInfo)
+    }
+    giveRecipeInfo()
   }, [])
 
   if (!recipeInfo) {
@@ -39,39 +64,42 @@ export default function RecipeInfo() {
     <main className="mt-10 px-6 lg:px-30">
       <div className="recipe-info-content">
         <div className="recipe-info-top">
-          <div onClick={giveRecipeInfo} className="recipe-info-name">
+          <div className="recipe-info-name">
             <h2 className="text-(--clr-secondary) text-[1.6rem] font-[600]">
-              Tuna Salad
+              {recipeInfo.title}
             </h2>
           </div>
         </div>
-        <div className="recipe-info-middle mt-6 md:flex md:gap-10">
+        <div className="recipe-info-middle mt-6 md:flex-col md:space-y-10">
           <div className="recipe-info-image">
             <img
-              src={recipeImage}
+              src={recipeInfo.image}
               alt="recipe image"
-              className='w-full max-w-100 lg:max-w-120 rounded-md'
+              className='shadow-md w-full max-w-100 lg:max-w-120 rounded-md'
             />
           </div>
-          <div className="recipe-info-more mt-4">
+          <div className="recipe-info-more mt-4 flex flex-col space-y-4">
+            <div className="recipe-info-orginal">
+              <a href={`${recipeInfo.sourceUrl}`}
+                className='text-[1.2rem] underline hover:text-(--clr-primary) duration-100 ease-in-out'
+              >
+                Full Instructions Here
+              </a>
+            </div>
             <div className="recipe-info-ingredients">
               <h3 className='text-(--clr-secondary) text-[1.2rem]
               font-[500] md:text-[1.6rem]'>
                 Ingredients:
               </h3>
               <ul className='mt-2 flex flex-col gap-2 list-disc pl-4'>
-                <li className='text-(--clr-secondary) text-[1rem] font-[500]
-                md:text-[1.1rem]'>
-                  Tuna
-                </li>
-                <li className='text-(--clr-secondary) text-[1rem] font-[500]
-                md:text-[1.1rem]'>
-                  Beans
-                </li>
-                <li className='text-(--clr-secondary) text-[1rem] font-[500]
-                md:text-[1.1rem]'>
-                  Cabbage
-                </li>
+                {
+                  recipeInfo.extendedIngredients.map((ingredient: Ingredient) => (
+                    <li key={ingredient.id} className='text-(--clr-secondary) text-[1rem] font-[500]
+                     md:text-[1.1rem]'>
+                      {ingredient.name}
+                    </li>
+                  ))
+                }
               </ul>
             </div>
           </div>
