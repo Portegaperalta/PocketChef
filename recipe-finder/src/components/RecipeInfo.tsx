@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import DOMPurify from "dompurify"
 import FetchRecipeById from '@/api/FetchRecipeById'
 import { Skeleton } from "@/components/ui/skeleton"
 
@@ -71,12 +72,18 @@ export default function RecipeInfo() {
           </div>
         </div>
         <div className="recipe-info-middle mt-6 md:flex-col md:space-y-10">
-          <div className="recipe-info-image">
+          <div className="recipe-info-image-summary flex flex-col gap-6 md:gap-14 md:flex-row">
             <img
               src={recipeInfo.image}
               alt="recipe image"
               className='shadow-md w-full max-w-100 lg:max-w-120 rounded-md'
             />
+            <div className="">
+              <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(recipeInfo.summary) }}
+                className='text-(--clr-secondary) text-[1.1rem]/8 text-justify
+                 md:text-[1.2rem]/10 md:w-full md:max-w-200'
+              ></p>
+            </div>
           </div>
           <div className="recipe-info-more mt-4 flex flex-col space-y-4">
             <div className="recipe-info-orginal">
