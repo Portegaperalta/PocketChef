@@ -63,7 +63,7 @@ export default function RecipeInfo() {
 
   return (
     <main className="mt-10 px-6 lg:px-30">
-      <div className="recipe-info-content">
+      <div className="recipe-info-content flex-col space-y-6">
         <div className="recipe-info-top">
           <div className="recipe-info-name">
             <h2 className="text-(--clr-secondary) text-[1.6rem] font-[600]">
@@ -71,8 +71,9 @@ export default function RecipeInfo() {
             </h2>
           </div>
         </div>
-        <div className="recipe-info-middle mt-6 md:flex-col md:space-y-10">
-          <div className="recipe-info-image-summary flex flex-col gap-6 md:gap-14 md:flex-row">
+        <div className="recipe-info-middle flex flex-col space-y-4 md:flex-col md:space-y-10">
+          <div className="recipe-info-image-summary flex flex-col gap-8 md:flex-row 
+          md:gap-14">
             <img
               src={recipeInfo.image}
               alt="recipe image"
