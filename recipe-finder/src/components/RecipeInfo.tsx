@@ -6,6 +6,7 @@ import { CircleSmall } from 'lucide-react';
 import VeganIcon from './ui/VeganIcon';
 import GlutenFreeIcon from './ui/GlutenFreeIcon';
 import VeryHealthyIcon from './ui/VeryHealthyIcon';
+import DairyFreeIcon from './ui/DairyFreeIcon';
 
 type Ingredient = {
   id: number,
@@ -39,7 +40,7 @@ export default function RecipeInfo() {
 
   useEffect(() => {
     const giveRecipeInfo = async () => {
-      const recipeData = await FetchRecipeById(649195)
+      const recipeData = await FetchRecipeById(662632)
       setRecipeInfo(recipeData)
     }
     giveRecipeInfo()
@@ -66,23 +67,26 @@ export default function RecipeInfo() {
 
   return (
     <main className="mt-10 px-6 lg:px-30">
-      <div className="recipe-info-content flex-col space-y-6">
-        <div className="recipe-info-top flex flex-col gap-4">
+      <div className="recipe-info-content flex-col space-y-8">
+        <div className="recipe-info-top flex flex-col gap-6">
           <div className="recipe-info-name">
             <h2 className="text-(--clr-secondary) text-[1.6rem] font-[600]">
               {recipeInfo.title}
             </h2>
           </div>
           <div className="recipe-info-features">
-            <ul className='flex flex-row gap-6'>
-              <li className='flex flex-row gap-2'>
+            <ul className='flex flex-row flex-wrap md:flex-nowrap gap-6'>
+              <li className={`${recipeInfo.vegan ? `flex` : `hidden`} flex-row gap-2`}>
                 <VeganIcon /> Vegan
               </li>
-              <li className='flex flex-row gap-2'>
+              <li className={`${recipeInfo.glutenFree ? `flex` : `hidden`} flex-row gap-2`}>
                 <GlutenFreeIcon /> Gluten Free
               </li>
-              <li className='flex flex-row gap-2'>
+              <li className={`${recipeInfo.veryHealthy ? `flex` : `hidden`} flex-row gap-2`}>
                 <VeryHealthyIcon /> Very Healthy
+              </li>
+              <li className={`${recipeInfo.dairyFree ? `flex` : `hidden`} flex-row gap-2`}>
+                <DairyFreeIcon /> Dairy Free
               </li>
             </ul>
           </div>
@@ -102,7 +106,7 @@ export default function RecipeInfo() {
               ></p>
             </div>
           </div>
-          <div className="recipe-info-more mt-4 flex flex-col space-y-4">
+          <div className="recipe-info-more mt-4 flex flex-col space-y-6">
             <div className="recipe-info-orginal">
               <a href={`${recipeInfo.sourceUrl}`}
                 className='text-[1.2rem] underline hover:text-(--clr-primary) duration-100 ease-in-out'
@@ -111,7 +115,7 @@ export default function RecipeInfo() {
               </a>
             </div>
             <div className="recipe-info-ingredients">
-              <h3 className='text-(--clr-secondary) text-[1.2rem]
+              <h3 className='text-(--clr-secondary) mb-6 text-[1.2rem]
               font-[500] md:text-[1.6rem]'>
                 Ingredients:
               </h3>
