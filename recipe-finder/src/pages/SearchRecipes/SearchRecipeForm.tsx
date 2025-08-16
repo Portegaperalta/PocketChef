@@ -18,26 +18,26 @@ export default function SearchRecipeForm({ onSearch }: Props) {
   }
 
   return (
-    <section className="search-recipe-form hidden md:inline-block">
+    <section className="search-recipe-form md:inline-block">
       <div className="search-recipe-form-content">
         <form
           id="searchRecipeForm"
           action="#"
           onSubmit={handleFormSubmission}
-          className=" py-2 px-2 flex flex-row items-center gap-3
-           w-full max-w-64 bg-(--clr-white) border-2 border-(--clr-quick-silver)
-          rounded-sm">
-          <input type="text"
-            onChange={handleSearch}
-            placeholder="Search recipes"
-            className="text-(--clr-secondary) font-[500] outline-none"
-          />
-          <button type="submit"
-            className="cursor-pointer"
-          >
-
-            <Search color="#9F9F9F" />
-          </button>
+          className=" py-2 px-2 flex flex-row items-center w-full bg-(--clr-white) 
+          md:max-w-65 border-2 border-(--clr-quick-silver) rounded-sm">
+          <div className="search-input basis-78">
+            <input type="text"
+              onChange={handleSearch}
+              placeholder="Search recipes"
+              className="text-(--clr-secondary) font-[500] outline-none" />
+          </div>
+          <div className="search-button">
+            <button type="submit"
+              className="cursor-pointer">
+              <Search color="#9F9F9F" />
+            </button>
+          </div>
         </form>
       </div>
     </section>
