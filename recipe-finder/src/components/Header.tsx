@@ -2,7 +2,6 @@ import { Link } from "react-router"
 import { useLocation } from "react-router-dom"
 import AppLogo from "./AppLogo"
 import DropdownMenuButton from "./ui/DropdownMenuButton"
-import HeaderSearchBar from "./ui/HeaderSearchBar"
 import HeaderOptions from "./HeaderOptions"
 import { Bookmark, House, Search, UserRound } from "lucide-react"
 import { useState, useEffect } from "react"
@@ -21,7 +20,7 @@ export default function Header() {
   }, [location])
 
   return (
-    <header className="bg-(--clr-primary) px-6 py-4 relative lg:px-30">
+    <header className="bg-(--clr-primary) px-6 py-4 relative md:px-10 lg:px-30">
       <div className="header-content flex flex-col md:items-center md:justify-between md:flex-row">
         <div className="header-content-left mb-2 flex flex-row items-center justify-between
         md:mb-0 md:flex-col">
@@ -30,15 +29,11 @@ export default function Header() {
           <div className=""></div>
         </div>
         <div className="header-content-right">
-          <div className={`header-content-search ${menuDisplay ? `hidden` : `block`} md:hidden`}>
-            <HeaderSearchBar />
-          </div>
           <div className="header-content-options">
             <HeaderOptions />
           </div>
         </div>
       </div>
-
       <div className={`header-dropdown-menu py-8 px-4 w-full z-100 bg-(--clr-primary)
         ${menuDisplay ? `block` : `hidden`} md:hidden`}>
         <nav>

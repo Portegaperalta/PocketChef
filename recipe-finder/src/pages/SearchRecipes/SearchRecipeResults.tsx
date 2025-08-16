@@ -39,6 +39,7 @@ export default function SearchRecipeResults({ query }: Props) {
           recipes.map((recipe) => (
             <ResultCard
               key={recipe.id}
+              id={recipe.id}
               Name={recipe.title}
               image={recipe.image}
             />

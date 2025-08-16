@@ -2,6 +2,7 @@ import SaveRecipeButton from './ui/SaveRecipeButton'
 import { Link } from 'react-router'
 
 type ResultCardProps = {
+  id: number,
   Name: string,
   IngredientsSummary?: string,
   BenefitSummary?: string,
@@ -24,7 +25,7 @@ export default function ResultCard(props: ResultCardProps) {
       <div className="benefit-recipe-info lg:basis-130 flex 
       items-center">
         <div className="result-card-text">
-          <Link to="/Recipe-Info"
+          <Link to={`/recipe/${props.id}`}
             className='flex flex-col gap-2'>
             <h3 className='benefit-recipe-title text-(--clr-secondary) 
               font-[600] mb-1 lg:text-[1.3rem] lg:font-[700]'>

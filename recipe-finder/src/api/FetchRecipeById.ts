@@ -9,7 +9,7 @@ type config = {
 const config = { headers: { Accept: "application/json" } }
 const apiKey = import.meta.env.VITE_SPOONACULAR_API_KEY
 
-export default async function FetchRecipeById(id: number) {
+export default async function FetchRecipeById(id: string | number | undefined) {
   try {
     const baseUrl = `https://api.spoonacular.com/recipes/${id}/information?&apiKey=${apiKey}`
     const response = await axios.get(baseUrl, config)
