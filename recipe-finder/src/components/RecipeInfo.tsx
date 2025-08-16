@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react'
 import DOMPurify from "dompurify"
 import FetchRecipeById from '@/api/FetchRecipeById'
 import { Skeleton } from "@/components/ui/skeleton"
+import { CircleSmall } from 'lucide-react';
+import VeganIcon from './ui/VeganIcon';
+import GlutenFreeIcon from './ui/GlutenFreeIcon';
+import VeryHealthyIcon from './ui/VeryHealthyIcon';
 
 type Ingredient = {
   id: number,
@@ -37,7 +41,6 @@ export default function RecipeInfo() {
     const giveRecipeInfo = async () => {
       const recipeData = await FetchRecipeById(649195)
       setRecipeInfo(recipeData)
-      console.log(recipeInfo)
     }
     giveRecipeInfo()
   }, [])
@@ -64,11 +67,24 @@ export default function RecipeInfo() {
   return (
     <main className="mt-10 px-6 lg:px-30">
       <div className="recipe-info-content flex-col space-y-6">
-        <div className="recipe-info-top">
+        <div className="recipe-info-top flex flex-col gap-4">
           <div className="recipe-info-name">
             <h2 className="text-(--clr-secondary) text-[1.6rem] font-[600]">
               {recipeInfo.title}
             </h2>
+          </div>
+          <div className="recipe-info-features">
+            <ul className='flex flex-row gap-6'>
+              <li className='flex flex-row gap-2'>
+                <VeganIcon /> Vegan
+              </li>
+              <li className='flex flex-row gap-2'>
+                <GlutenFreeIcon /> Gluten Free
+              </li>
+              <li className='flex flex-row gap-2'>
+                <VeryHealthyIcon /> Very Healthy
+              </li>
+            </ul>
           </div>
         </div>
         <div className="recipe-info-middle flex flex-col space-y-4 md:flex-col md:space-y-10">
@@ -99,11 +115,12 @@ export default function RecipeInfo() {
               font-[500] md:text-[1.6rem]'>
                 Ingredients:
               </h3>
-              <ul className='mt-2 flex flex-col gap-2 list-disc pl-4'>
+              <ul className='mt-2 pl-0 w-full md:max-w-140 grid gap-4 md:grid-cols-2'>
                 {
                   recipeInfo.extendedIngredients.map((ingredient: Ingredient) => (
                     <li key={ingredient.id} className='text-(--clr-secondary) text-[1rem] font-[500]
-                     md:text-[1.1rem]'>
+                     md:text-[1.1rem] flex items-center gap-1'>
+                      <CircleSmall color='#F6B100' size={16} />
                       {ingredient.name}
                     </li>
                   ))
