@@ -45,7 +45,6 @@ export default function RecipeInfo() {
     const giveRecipeInfo = async () => {
       try {
         const recipeData = await FetchRecipeById(id)
-        console.log(recipeData)
         setRecipeInfo(recipeData)
       }
       catch (error) {
@@ -75,7 +74,7 @@ export default function RecipeInfo() {
   }
 
   return (
-    <main className="mt-10 px-6 md:px-10 lg:px-30">
+    <main className="mt-10 px-6 md:px-16 lg:px-30">
       <div className="recipe-info-content flex-col space-y-8 lg:space-y-6">
         <div className="recipe-info-top flex flex-col gap-6">
           <div className="recipe-info-name">
@@ -108,11 +107,11 @@ export default function RecipeInfo() {
           <img
             src={recipeInfo.image}
             alt="recipe image"
-            className='shadow-md w-full md:max-w-160 lg:max-w-160 rounded-md'
+            className='shadow-md w-full lg:max-w-160 rounded-md'
           />
-          <div className="recipe-info-summary w-full md:max-w-160 lg:max-w-200">
-            <h3 className='text-(--clr-secondary) text-[1.4rem]
-              font-[500] md:text-[1.6rem]'>
+          <div className="recipe-info-summary w-full">
+            <h3 className='text-(--clr-secondary) text-[1.4rem] 
+            font-[500] mb-2 md:text-[1.6rem]'>
               About
             </h3>
             <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(recipeInfo.summary) }}
@@ -121,7 +120,7 @@ export default function RecipeInfo() {
             ></p>
           </div>
         </div>
-        <div className="recipe-info-bottom mt-4 flex flex-col space-y-6">
+        <div className="recipe-info-bottom mt-4 grid grid-cols-1 space-y-6 md:space-y-10">
           <div className="recipe-info-ingredients">
             <h3 className='text-(--clr-secondary) mb-6 text-[1.4rem]
               font-[500] md:text-[1.6rem]'>
@@ -168,13 +167,6 @@ export default function RecipeInfo() {
                 ))
               }
             </ul>
-          </div>
-          <div className="recipe-info-orginal hidden">
-            <a href={`${recipeInfo.sourceUrl}`}
-              className='text-[1.2rem] underline hover:text-(--clr-primary) duration-100
-              ease-in-out'>
-              Full Instructions Here
-            </a>
           </div>
         </div>
       </div>
