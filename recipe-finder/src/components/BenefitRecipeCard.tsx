@@ -20,7 +20,7 @@ export default function BenefitRecipeCard(props: BenefitRecipeCardProps) {
         data-aos-duration="1000"
         data-aos-once="true"
         className="benefit-recipe-card py-2 px-4 flex gap-4 items-center 
-     bg-(--clr-white) shadow-lg rounded-lg">
+        bg-(--clr-white) shadow-lg rounded-lg">
         <div className="benefit-recipe-image py-1">
           <img src={props.recipeImageUrl}
             alt="benefit recipe image"
