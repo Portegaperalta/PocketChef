@@ -5,6 +5,7 @@ import FetchRecipeById from '@/api/FetchRecipeById'
 import { Skeleton } from "@/components/ui/skeleton"
 import { CircleSmall } from 'lucide-react';
 import VeganIcon from './ui/VeganIcon';
+import VegetarianIcon from './ui/VegetarianIcon'
 import GlutenFreeIcon from './ui/GlutenFreeIcon';
 import VeryHealthyIcon from './ui/VeryHealthyIcon';
 import DairyFreeIcon from './ui/DairyFreeIcon';
@@ -43,6 +44,7 @@ export default function RecipeInfo() {
     const giveRecipeInfo = async () => {
       try {
         const recipeData = await FetchRecipeById(id)
+        console.log(recipeData)
         setRecipeInfo(recipeData)
       }
       catch (error) {
@@ -85,6 +87,9 @@ export default function RecipeInfo() {
               <li className={`${recipeInfo.vegan ? `flex` : `hidden`} flex-row gap-2`}>
                 <VeganIcon /> Vegan
               </li>
+              <li className={`${recipeInfo.vegetarian ? `flex` : `hidden`} flex-row gap-2`}>
+                <VegetarianIcon /> Vegetarian
+              </li>
               <li className={`${recipeInfo.glutenFree ? `flex` : `hidden`} flex-row gap-2`}>
                 <GlutenFreeIcon /> Gluten Free
               </li>
@@ -106,22 +111,14 @@ export default function RecipeInfo() {
           />
           <div className="recipe-info-summary w-full md:max-w-160 lg:max-w-200">
             <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(recipeInfo.summary) }}
-              className='text-(--clr-secondary) text-[1.1rem]/8 text-justify
+              className='text-(--clr-secondary) text-[1.1rem]/10 text-justify
                  md:text-[1.2rem]/10'
             ></p>
           </div>
-
         </div>
         <div className="recipe-info-bottom mt-4 flex flex-col space-y-6">
-          <div className="recipe-info-orginal">
-            <a href={`${recipeInfo.sourceUrl}`}
-              className='text-[1.2rem] underline hover:text-(--clr-primary) duration-100 ease-in-out'
-            >
-              Full Instructions Here
-            </a>
-          </div>
           <div className="recipe-info-ingredients">
-            <h3 className='text-(--clr-secondary) mb-6 text-[1.2rem]
+            <h3 className='text-(--clr-secondary) mb-6 text-[1.4rem]
               font-[500] md:text-[1.6rem]'>
               Ingredients:
             </h3>
@@ -136,6 +133,36 @@ export default function RecipeInfo() {
                 ))
               }
             </ul>
+          </div>
+          <div className="recipe-info-instructions">
+            <h3 className='text-(--clr-secondary) mb-6 text-[1.4rem]
+              font-[500] md:text-[1.6rem]'>
+              Preparation
+            </h3>
+            <ul className='flex flex-col gap-8'>
+              {
+                recipeInfo.analyzedInstructions[0].steps.map((step) => (
+                  <li key={step.number}
+                    className='flex flex-row items-start gap-4'>
+                    <div className="step-number text-(--clr-primary) text-[1.4rem]
+                    px-4 py-1 bg-(--clr-white) border-2 border-(--clr-primary) rounded-md
+                    text-center w-full max-w-12">
+                      {step.number}
+                    </div>
+                    <div className="step-text text-(--clr-secondary)">
+                      {step.step}
+                    </div>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div className="recipe-info-orginal hidden">
+            <a href={`${recipeInfo.sourceUrl}`}
+              className='text-[1.2rem] underline hover:text-(--clr-primary) duration-100
+              ease-in-out'>
+              Full Instructions Here
+            </a>
           </div>
         </div>
       </div>
