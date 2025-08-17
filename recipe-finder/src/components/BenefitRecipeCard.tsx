@@ -1,21 +1,22 @@
-import { CircleCheck } from 'lucide-react'
 import RatingLabel from './ui/RatingLabel'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import transformScore from '@/utils/transformScore';
+import { Link } from 'react-router';
 
 type BenefitRecipeCardProps = {
+  id: number,
   Name: string,
-  Feature?: string,
   rating: number,
-  ImageUrl: string
+  ImageUrl: string,
 }
 
 AOS.init();
 
 export default function BenefitRecipeCard(props: BenefitRecipeCardProps) {
+
   return (
-    <a href="#">
+    <Link to={`/Recipe/:${props.id}`}>
       <div
         data-aos="fade-right"
         data-aos-duration="1000"
@@ -35,16 +36,12 @@ export default function BenefitRecipeCard(props: BenefitRecipeCardProps) {
           font-[600] mb-1 lg:text-[1.4rem] lg:font-[700]'>
               {props.Name}
             </h3>
-            <p className='text-(--clr-primary) text-[.9rem] font-[500] flex 
-          gap-1 items-center md:text-[1rem] lg:text-[1.1rem] '>
-              <CircleCheck />{props.Feature}
-            </p>
           </div>
         </div>
         <div className="benefit-recipe-rating hidden lg:inline-block">
           <RatingLabel rating={transformScore(props.rating)} />
         </div>
       </div>
-    </a >
+    </Link >
   )
 }
