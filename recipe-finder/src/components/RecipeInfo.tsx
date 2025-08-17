@@ -9,31 +9,32 @@ import VegetarianIcon from './ui/VegetarianIcon'
 import GlutenFreeIcon from './ui/GlutenFreeIcon';
 import VeryHealthyIcon from './ui/VeryHealthyIcon';
 import DairyFreeIcon from './ui/DairyFreeIcon';
+import decimalToFraction from '@/utils/decimalToFraction'
 
 type Ingredient = {
-  id: number,
   aisle: string,
-  image: string,
+  amount: number,
   consistency: string,
+  id: number,
+  image: string,
+  measures: {
+    metric: {
+      amount: number,
+      unitLong: string,
+      unitShort: string,
+    },
+    us: {
+      amount: number,
+      unitLong: string
+      unitShort: string,
+    },
+  }
   name: string,
   nameClean: string,
   original: string,
   originalName: string,
-  amount: number,
   unit: string,
   meta: [],
-  measures: {
-    us: {
-      amount: number,
-      unitShort: string,
-      unitLong: string
-    },
-    metric: {
-      amount: number,
-      unitShort: string,
-      unitLong: string,
-    }
-  }
 }
 
 export default function RecipeInfo() {
@@ -110,6 +111,10 @@ export default function RecipeInfo() {
             className='shadow-md w-full md:max-w-160 lg:max-w-160 rounded-md'
           />
           <div className="recipe-info-summary w-full md:max-w-160 lg:max-w-200">
+            <h3 className='text-(--clr-secondary) text-[1.4rem]
+              font-[500] md:text-[1.6rem]'>
+              About
+            </h3>
             <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(recipeInfo.summary) }}
               className='text-(--clr-secondary) text-[1.1rem]/10 text-justify
                  md:text-[1.2rem]/10'
@@ -120,15 +125,21 @@ export default function RecipeInfo() {
           <div className="recipe-info-ingredients">
             <h3 className='text-(--clr-secondary) mb-6 text-[1.4rem]
               font-[500] md:text-[1.6rem]'>
-              Ingredients:
+              Ingredients
             </h3>
             <ul className='mt-2 pl-0 w-full md:max-w-140 grid gap-4 md:grid-cols-2'>
               {
                 recipeInfo.extendedIngredients.map((ingredient: Ingredient) => (
-                  <li key={ingredient.name} className='text-(--clr-secondary) text-[1rem] font-[500]
+                  <li key={ingredient.name} className='text-(--clr-secondary) text-[1.2rem] font-[500]
                      md:text-[1.1rem] flex items-center gap-1'>
                     <CircleSmall color='#F6B100' size={16} />
-                    {ingredient.name}
+                    <div className="">
+                      {
+                        `${decimalToFraction(ingredient.measures.us.amount)}
+                         ${ingredient.measures.us.unitShort}
+                         ${ingredient.name}`
+                      }
+                    </div>
                   </li>
                 ))
               }
@@ -141,16 +152,17 @@ export default function RecipeInfo() {
             </h3>
             <ul className='flex flex-col gap-8'>
               {
-                recipeInfo.analyzedInstructions[0].steps.map((step) => (
+                recipeInfo.analyzedInstructions[0].steps.map((step: any) => (
                   <li key={step.number}
                     className='flex flex-row items-start gap-4'>
-                    <div className="step-number text-(--clr-primary) text-[1.4rem]
-                    px-4 py-1 bg-(--clr-white) border-2 border-(--clr-primary) rounded-md
-                    text-center w-full max-w-12">
+                    <div className="step-number text-(--clr-primary) text-[1.2rem]
+                    py-1 bg-(--clr-white) border-2 border-(--clr-primary) rounded-md
+                    text-center w-full max-w-10">
                       {step.number}
                     </div>
-                    <div className="step-text text-(--clr-secondary)">
-                      {step.step}
+                    <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(step.step) }}
+                      className="step-text text-(--clr-secondary) w-full font-[500]
+                      text-justify md:max-w-160 lg:max-w-170">
                     </div>
                   </li>
                 ))
