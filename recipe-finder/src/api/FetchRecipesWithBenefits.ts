@@ -11,7 +11,7 @@ const apiKey = import.meta.env.VITE_SPOONACULAR_API_KEY
 
 export default async function FetchRecipesWithBenefits() {
   try {
-    const baseUrl = `https://api.spoonacular.com/recipes/random?number=10&apiKey=${apiKey}`
+    const baseUrl = `https://api.spoonacular.com/recipes/random?number=5&apiKey=${apiKey}`
     const response = await axios.get(baseUrl, config)
     return response.data.recipes
   }

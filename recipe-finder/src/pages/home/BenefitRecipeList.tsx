@@ -9,47 +9,47 @@ import FetchRecipesWithBenefits from "@/api/FetchRecipesWithBenefits"
 
 type recipeWithBenefit = {
   id: number,
-  Name: string,
+  title: string,
   Feature: string,
   Rating: number,
-  ImageUrl: string
+  image: string
 }
 
 const recipesWithBenefits: recipeWithBenefit[] = [
   {
     id: 1,
-    Name: "Mung Bean Salad",
+    title: "Mung Bean Salad",
     Feature: "Reduces Chronic Disease Risk",
     Rating: 4.3,
-    ImageUrl: MungBeanSaladImage,
+    image: MungBeanSaladImage,
   },
   {
     id: 2,
-    Name: "Pasta Salad",
+    title: "Pasta Salad",
     Feature: "Protects against cancer",
     Rating: 4.1,
-    ImageUrl: PastaSaladImage,
+    image: PastaSaladImage,
   },
   {
     id: 3,
-    Name: "Tuna salad",
+    title: "Tuna salad",
     Feature: "Helps with Blood Pressure",
     Rating: 4.8,
-    ImageUrl: TunaSaladImage,
+    image: TunaSaladImage,
   },
   {
     id: 4,
-    Name: "Mung Bean Salad",
+    title: "Mung Bean Salad",
     Feature: "Reduces Chronic Disease Risk",
     Rating: 4.3,
-    ImageUrl: MungBeanSaladImage,
+    image: MungBeanSaladImage,
   },
   {
     id: 5,
-    Name: "Caesar Salad",
+    title: "Caesar Salad",
     Feature: "Boosts Immunity System",
     Rating: 3.4,
-    ImageUrl: CaesarSaladImage,
+    image: CaesarSaladImage,
   }
 ]
 
@@ -59,7 +59,7 @@ export default function BenefitRecipeList() {
   const getRecipes = async () => {
     const data = await FetchRecipesWithBenefits()
     setRecipes(data)
-    console.log(recipes)
+    console.log(data)
   }
 
   useEffect(() => {
@@ -84,13 +84,13 @@ export default function BenefitRecipeList() {
     <div className="benefit-recipe-list flex flex-col gap-6 
     md:gap-6 lg:gap-12">
       {
-        recipesWithBenefits.map((recipe) => (
+        recipes.map((recipe: recipeWithBenefit) => (
           <BenefitRecipeCard
             key={recipe.id}
-            recipeName={recipe.Name}
-            recipeFeature={recipe.Feature}
-            recipeRating={recipe.Rating}
-            recipeImageUrl={recipe.ImageUrl}
+            Name={recipe.title}
+            Feature={recipe.Feature}
+            Rating={recipe.Rating}
+            ImageUrl={recipe.image}
           />
         ))
       }
