@@ -2,11 +2,12 @@ import { CircleCheck } from 'lucide-react'
 import RatingLabel from './ui/RatingLabel'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import transformScore from '@/utils/transformScore';
 
 type BenefitRecipeCardProps = {
   Name: string,
   Feature?: string,
-  Rating: number,
+  rating: number,
   ImageUrl: string
 }
 
@@ -24,7 +25,8 @@ export default function BenefitRecipeCard(props: BenefitRecipeCardProps) {
         <div className="benefit-recipe-image py-1">
           <img src={props.ImageUrl}
             alt="benefit recipe image"
-            className='w-full max-w-25 h-15 md:max-w-26 md:h-18 lg:max-w-40 lg:h-20'
+            className='w-full max-w-25 h-15 rounded-md md:max-w-26 md:h-18 
+            lg:max-w-40 lg:h-20'
           />
         </div>
         <div className="benefit-recipe-info lg:basis-130 flex items-center">
@@ -40,7 +42,7 @@ export default function BenefitRecipeCard(props: BenefitRecipeCardProps) {
           </div>
         </div>
         <div className="benefit-recipe-rating hidden lg:inline-block">
-          <RatingLabel rating={props.Rating} />
+          <RatingLabel rating={transformScore(props.rating)} />
         </div>
       </div>
     </a >

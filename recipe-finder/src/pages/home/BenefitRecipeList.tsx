@@ -11,7 +11,7 @@ type recipeWithBenefit = {
   id: number,
   title: string,
   Feature: string,
-  Rating: number,
+  spoonacularScore: number,
   image: string
 }
 
@@ -20,35 +20,35 @@ const recipesWithBenefits: recipeWithBenefit[] = [
     id: 1,
     title: "Mung Bean Salad",
     Feature: "Reduces Chronic Disease Risk",
-    Rating: 4.3,
+    spoonacularScore: 4.3,
     image: MungBeanSaladImage,
   },
   {
     id: 2,
     title: "Pasta Salad",
     Feature: "Protects against cancer",
-    Rating: 4.1,
+    spoonacularScore: 4.1,
     image: PastaSaladImage,
   },
   {
     id: 3,
     title: "Tuna salad",
     Feature: "Helps with Blood Pressure",
-    Rating: 4.8,
+    spoonacularScore: 4.8,
     image: TunaSaladImage,
   },
   {
     id: 4,
     title: "Mung Bean Salad",
     Feature: "Reduces Chronic Disease Risk",
-    Rating: 4.3,
+    spoonacularScore: 4.3,
     image: MungBeanSaladImage,
   },
   {
     id: 5,
     title: "Caesar Salad",
     Feature: "Boosts Immunity System",
-    Rating: 3.4,
+    spoonacularScore: 3.4,
     image: CaesarSaladImage,
   }
 ]
@@ -89,7 +89,7 @@ export default function BenefitRecipeList() {
             key={recipe.id}
             Name={recipe.title}
             Feature={recipe.Feature}
-            Rating={recipe.Rating}
+            rating={recipe.spoonacularScore}
             ImageUrl={recipe.image}
           />
         ))
