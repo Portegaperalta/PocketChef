@@ -25,8 +25,8 @@ export default function SearchRecipeForm({ onSearch }: Props) {
           action="#"
           onSubmit={handleFormSubmission}
           className=" py-2 px-2 flex flex-row items-center w-full bg-(--clr-white) 
-          md:max-w-65 border-2 border-(--clr-quick-silver) rounded-sm">
-          <div className="search-input basis-78">
+          max-w-152 md:max-w-64 border-2 border-(--clr-quick-silver) rounded-sm">
+          <div className="search-input basis-140 md:basis-54">
             <input type="text"
               onChange={handleSearch}
               placeholder="Search recipes"
