@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import DOMPurify from "dompurify"
 import FetchRecipeById from '@/api/FetchRecipeById'
 import { Skeleton } from "@/components/ui/skeleton"
-import { CircleSmall, Share2 } from 'lucide-react';
+import { CircleSmall } from 'lucide-react';
 import VeganIcon from './ui/VeganIcon';
 import VegetarianIcon from './ui/VegetarianIcon'
 import GlutenFreeIcon from './ui/GlutenFreeIcon';
@@ -62,13 +62,14 @@ export default function RecipeInfo() {
         <div className="flex flex-col space-y-3 md:flex-row md:items-center md:gap-10">
           <div className="space-y-4">
             <Skeleton className="h-6 w-[250px]" />
+            <Skeleton className="h-4 w-[200px]" />
             <Skeleton className="h-[200px] w-[340px] rounded-xl md:w-[400px] md:h-[240px] lg:w-[450px] lg:h-[260px]" />
           </div>
           <div className="space-y-2 md:space-y-4">
             <Skeleton className="h-4 w-[250px]" />
-            <Skeleton className="h-4 w-[120px]" />
-            <Skeleton className="h-4 w-[120px]" />
-            <Skeleton className="h-4 w-[120px]" />
+            <Skeleton className="h-4 w-[270px]" />
+            <Skeleton className="h-4 w-[270px]" />
+            <Skeleton className="h-4 w-[270px]" />
           </div>
         </div>
       </main>
