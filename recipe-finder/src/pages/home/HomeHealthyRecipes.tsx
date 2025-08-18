@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import RecipeCard from "../../components/RecipeCard";
+import { Skeleton } from "@/components/ui/skeleton";
 import KetoSaladCardImg from "../../images/recipe-img1.svg"
 import SewersSaladCardImg from '../../images/sewers-salad-card-img.svg'
 import FetchHealthyRecipes from "@/api/FetchHealthyRecipes";
@@ -58,40 +59,55 @@ export default function HomeHealthyRecipes() {
     getHealthyRecipes()
   }, [])
 
-  if (healthyRecipes)
-
+  if (!healthyRecipes) {
     return (
-      <section className="home-healthy-recipes mt-4 md:mt-6 lg:mt-8">
-        <div className="healthy-recipes-top">
-          <div className="healthy-recipes-title">
-            <h2 className="text-(--clr-secondary) text-[1.6rem] font-[600]">
-              Healthy Recipes
-            </h2>
-          </div>
-          <div className="healthy-recipes-links flex items-center justify-between">
-            <p className="text-(--clr-primary) text-[1.4rem] font-[500]">With Features</p>
-            <a href="#"
-              className="text-(--clr-quick-silver) text-[1rem]"
-            >
-              See all
-            </a>
-          </div>
+      <div className="mt-4 md:mt-6 lg:mt-8">
+        <div className="flex flex-row gap-6 lg:gap-12 ">
+          <Skeleton className="h-[200px] w-full rounded-t-full
+           md:max-w-[340px] lg:max-w-[700px]" />
+          <Skeleton className="h-[200px] w-full rounded-t-full
+           md:max-w-[340px] lg:max-w-[700px]" />
+          <Skeleton className="h-[200px] w-full rounded-t-full
+           md:max-w-[340px] lg:max-w-[700px]" />
+          <Skeleton className="h-[200px] w-full rounded-t-full
+           md:max-w-[340px] lg:max-w-[700px]" />
         </div>
-        <div className="healthy-recipes-bottom flex flex-row justify-center
-      md:justify-between flex-wrap">
-          {
-            healthyRecipes.map((recipe: HealthyRecipe) => (
-              <RecipeCard
-                key={recipe.id}
-                title={recipe.title}
-                extendedIngredients={recipe.extendedIngredients}
-                diets={recipe.diets}
-                spoonacularScore={transformScore(recipe.spoonacularScore)}
-                image={recipe.image}
-              />
-            ))
-          }
-        </div>
-      </section>
+      </div>
     )
+  }
+
+  return (
+    <section className="home-healthy-recipes mt-4 md:mt-6 lg:mt-8">
+      <div className="healthy-recipes-top">
+        <div className="healthy-recipes-title">
+          <h2 className="text-(--clr-secondary) text-[1.6rem] font-[600]">
+            Healthy Recipes
+          </h2>
+        </div>
+        <div className="healthy-recipes-links flex items-center justify-between">
+          <p className="text-(--clr-primary) text-[1.4rem] font-[500]">With Features</p>
+          <a href="#"
+            className="text-(--clr-quick-silver) text-[1rem]"
+          >
+            See all
+          </a>
+        </div>
+      </div>
+      <div className="healthy-recipes-bottom flex flex-row justify-center
+      md:justify-between flex-wrap">
+        {
+          healthyRecipes.map((recipe: HealthyRecipe) => (
+            <RecipeCard
+              key={recipe.id}
+              title={recipe.title}
+              extendedIngredients={recipe.extendedIngredients}
+              diets={recipe.diets}
+              spoonacularScore={transformScore(recipe.spoonacularScore)}
+              image={recipe.image}
+            />
+          ))
+        }
+      </div>
+    </section>
+  )
 }
