@@ -26,12 +26,15 @@
    git clone https://github.com/your-username/recipe-finder.git
    cd recipe-finder
 
+
 2. **Install dependencies**
    
    ```bash
    npm install
 
+
 3. *Get your API key : https://spoonacular.com/food-api*
+
 
 4. **Create enviroment variables**
    
@@ -42,6 +45,7 @@
 
    VITE_SPOONACULAR_API_KEY=your_api_key
    ```
+   
 5. **Run development server**
    
    ```bash
