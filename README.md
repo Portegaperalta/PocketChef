@@ -31,16 +31,18 @@
    ```bash
    npm install
 
+3. *Get your API key : https://spoonacular.com/food-api*
+
 4. **Create enviroment variables**
    
-   Create a .env file in the root folder and add your API keys in the .env file
+   Create a .env file in the root folder and add your Spoonacular API keys in the .env file
    ```bash
    git clone https://github.com/your-username/recipe-finder.git
    cd recipe-finder
 
    VITE_SPOONACULAR_API_KEY=your_api_key
    ```
-4. **Run development server**
+5. **Run development server**
    
    ```bash
    npm run dev
