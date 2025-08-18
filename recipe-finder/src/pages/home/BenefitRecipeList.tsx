@@ -17,7 +17,6 @@ export default function BenefitRecipeList() {
   const getRecipes = async () => {
     const data = await FetchRecipesWithBenefits()
     setRecipes(data)
-    console.log(data)
   }
 
   useEffect(() => {

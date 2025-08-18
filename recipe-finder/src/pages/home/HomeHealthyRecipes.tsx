@@ -1,17 +1,20 @@
+import { useEffect, useState } from "react";
 import RecipeCard from "../../components/RecipeCard";
 import KetoSaladCardImg from "../../images/recipe-img1.svg"
 import SewersSaladCardImg from '../../images/sewers-salad-card-img.svg'
+import FetchHealthyRecipes from "@/api/FetchHealthyRecipes";
+import transformScore from "@/utils/transformScore";
 
-type healthyRecipe = {
+type HealthyRecipe = {
   id: number,
-  Name: string,
-  ingredients?: string,
-  ingredientsSumary: string,
-  Rating: number,
-  ImageUrl: string,
+  title: string,
+  diets: string[]
+  extendedIngredients?: any[],
+  spoonacularScore: number,
+  image: string,
 }
 
-const featuresRecipes: healthyRecipe[] = [
+/* const featuresRecipes: HealthyRecipe[] = [
   {
     id: 1,
     Name: "Keto Salad",
@@ -40,40 +43,55 @@ const featuresRecipes: healthyRecipe[] = [
     Rating: 4.5,
     ImageUrl: SewersSaladCardImg,
   },
-]
+] */
 
 export default function HomeHealthyRecipes() {
-  return (
-    <section className="home-healthy-recipes mt-4 md:mt-6 lg:mt-8">
-      <div className="healthy-recipes-top">
-        <div className="healthy-recipes-title">
-          <h2 className="text-(--clr-secondary) text-[1.6rem] font-[600]">
-            Healthy Recipes
-          </h2>
+  const [healthyRecipes, setHealthyRecipes] = useState<any>(null)
+
+  const getHealthyRecipes = async () => {
+    const healthyRecipesData = await FetchHealthyRecipes()
+    console.log(healthyRecipesData)
+    setHealthyRecipes(healthyRecipesData)
+  }
+
+  useEffect(() => {
+    getHealthyRecipes()
+  }, [])
+
+  if (healthyRecipes)
+
+    return (
+      <section className="home-healthy-recipes mt-4 md:mt-6 lg:mt-8">
+        <div className="healthy-recipes-top">
+          <div className="healthy-recipes-title">
+            <h2 className="text-(--clr-secondary) text-[1.6rem] font-[600]">
+              Healthy Recipes
+            </h2>
+          </div>
+          <div className="healthy-recipes-links flex items-center justify-between">
+            <p className="text-(--clr-primary) text-[1.4rem] font-[500]">With Features</p>
+            <a href="#"
+              className="text-(--clr-quick-silver) text-[1rem]"
+            >
+              See all
+            </a>
+          </div>
         </div>
-        <div className="healthy-recipes-links flex items-center justify-between">
-          <p className="text-(--clr-primary) text-[1.4rem] font-[500]">With Features</p>
-          <a href="#"
-            className="text-(--clr-quick-silver) text-[1rem]"
-          >
-            See all
-          </a>
-        </div>
-      </div>
-      <div className="healthy-recipes-bottom flex flex-row justify-center
+        <div className="healthy-recipes-bottom flex flex-row justify-center
       md:justify-between flex-wrap">
-        {
-          featuresRecipes.map((recipe => (
-            <RecipeCard
-              key={recipe.id}
-              Name={recipe.Name}
-              ingredientsSumary={recipe.ingredientsSumary}
-              Rating={recipe.Rating}
-              ImageUrl={recipe.ImageUrl}
-            />
-          )))
-        }
-      </div>
-    </section>
-  )
+          {
+            healthyRecipes.map((recipe: HealthyRecipe) => (
+              <RecipeCard
+                key={recipe.id}
+                title={recipe.title}
+                extendedIngredients={recipe.extendedIngredients}
+                diets={recipe.diets}
+                spoonacularScore={transformScore(recipe.spoonacularScore)}
+                image={recipe.image}
+              />
+            ))
+          }
+        </div>
+      </section>
+    )
 }
