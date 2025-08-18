@@ -112,7 +112,7 @@ export default function BenefitRecipeInfo() {
           <div className="recipe-info-summary w-full">
             <h3 className='text-(--clr-secondary) text-[1.4rem] 
             font-[500] mb-2 md:text-[1.6rem]'>
-              About
+              About :
             </h3>
             <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(recipeInfo.summary) }}
               className='text-(--clr-secondary) text-[1.1rem]/10 text-justify
@@ -124,7 +124,7 @@ export default function BenefitRecipeInfo() {
           <div className="recipe-info-ingredients">
             <h3 className='text-(--clr-secondary) mb-6 text-[1.4rem]
               font-[500] md:text-[1.6rem]'>
-              Ingredients
+              Ingredients :
             </h3>
             <ul className='mt-2 pl-0 w-full md:max-w-140 grid gap-4 md:grid-cols-2'>
               {
@@ -147,7 +147,7 @@ export default function BenefitRecipeInfo() {
           <div className="recipe-info-instructions">
             <h3 className='text-(--clr-secondary) mb-6 text-[1.4rem]
               font-[500] md:text-[1.6rem]'>
-              Preparation
+              Preparation :
             </h3>
             <ul className='flex flex-col gap-8'>
               {

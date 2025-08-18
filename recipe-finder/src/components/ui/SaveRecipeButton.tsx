@@ -11,6 +11,7 @@ export default function SaveRecipeButton() {
   return (
     <div
       onClick={HandleButtonClick}
+      title='Save recipe'
       className={`save-recipe-button cursor-pointer`}>
       <Bookmark color='#F6B100' fill={buttonBackground ? `#F6B100` : `transparent`} />
     </div>

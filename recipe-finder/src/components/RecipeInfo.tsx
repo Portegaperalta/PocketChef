@@ -3,13 +3,15 @@ import { useParams } from 'react-router-dom'
 import DOMPurify from "dompurify"
 import FetchRecipeById from '@/api/FetchRecipeById'
 import { Skeleton } from "@/components/ui/skeleton"
-import { CircleSmall } from 'lucide-react';
+import { CircleSmall, Share2 } from 'lucide-react';
 import VeganIcon from './ui/VeganIcon';
 import VegetarianIcon from './ui/VegetarianIcon'
 import GlutenFreeIcon from './ui/GlutenFreeIcon';
 import VeryHealthyIcon from './ui/VeryHealthyIcon';
 import DairyFreeIcon from './ui/DairyFreeIcon';
 import decimalToFraction from '@/utils/decimalToFraction'
+import SaveRecipeButton from './ui/SaveRecipeButton'
+import ShareRecipeButton from './ui/ShareRecipeButton'
 
 type Ingredient = {
   aisle: string,
@@ -104,15 +106,23 @@ export default function RecipeInfo() {
         </div>
         <div className="recipe-info-middle flex flex-col space-y-4 
           md:flex-col md:space-y-10 lg:flex-row gap-8">
-          <img
-            src={recipeInfo.image}
-            alt="recipe image"
-            className='shadow-md w-full lg:max-w-160 rounded-md'
-          />
+          <div className="recipe-image">
+            <img src={recipeInfo.image}
+              alt="recipe image"
+              className='shadow-md w-full mb-8 lg:max-w-160 rounded-md' />
+            <div className="recipe-info-options flex gap-2">
+              <div className="save-recipe">
+                <SaveRecipeButton />
+              </div>
+              <div className="share-recipe">
+                <ShareRecipeButton />
+              </div>
+            </div>
+          </div>
           <div className="recipe-info-summary w-full">
             <h3 className='text-(--clr-secondary) text-[1.4rem] 
             font-[500] mb-2 md:text-[1.6rem]'>
-              About
+              About :
             </h3>
             <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(recipeInfo.summary) }}
               className='text-(--clr-secondary) text-[1.1rem]/10 text-justify
@@ -124,7 +134,7 @@ export default function RecipeInfo() {
           <div className="recipe-info-ingredients">
             <h3 className='text-(--clr-secondary) mb-6 text-[1.4rem]
               font-[500] md:text-[1.6rem]'>
-              Ingredients
+              Ingredients :
             </h3>
             <ul className='mt-2 pl-0 w-full md:max-w-140 grid gap-4 md:grid-cols-2'>
               {
@@ -147,7 +157,7 @@ export default function RecipeInfo() {
           <div className="recipe-info-instructions">
             <h3 className='text-(--clr-secondary) mb-6 text-[1.4rem]
               font-[500] md:text-[1.6rem]'>
-              Preparation
+              Preparation :
             </h3>
             <ul className='flex flex-col gap-8'>
               {
