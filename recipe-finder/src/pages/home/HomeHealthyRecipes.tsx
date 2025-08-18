@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import RecipeCard from "../../components/RecipeCard";
 import { Skeleton } from "@/components/ui/skeleton";
-import KetoSaladCardImg from "../../images/recipe-img1.svg"
-import SewersSaladCardImg from '../../images/sewers-salad-card-img.svg'
 import FetchHealthyRecipes from "@/api/FetchHealthyRecipes";
 import transformScore from "@/utils/transformScore";
 
@@ -62,15 +60,15 @@ export default function HomeHealthyRecipes() {
   if (!healthyRecipes) {
     return (
       <div className="mt-4 md:mt-6 lg:mt-8">
-        <div className="flex flex-row gap-6 lg:gap-12 ">
+        <div className="flex flex-row gap-6 lg:gap-12 md:justify-between flex-wrap">
           <Skeleton className="h-[200px] w-full rounded-t-full
-           md:max-w-[340px] lg:max-w-[700px]" />
+           md:max-w-[340px] lg:max-w-[300px]" />
           <Skeleton className="h-[200px] w-full rounded-t-full
-           md:max-w-[340px] lg:max-w-[700px]" />
+           md:max-w-[340px] lg:max-w-[300px]" />
           <Skeleton className="h-[200px] w-full rounded-t-full
-           md:max-w-[340px] lg:max-w-[700px]" />
+           md:max-w-[340px] lg:max-w-[300px]" />
           <Skeleton className="h-[200px] w-full rounded-t-full
-           md:max-w-[340px] lg:max-w-[700px]" />
+           md:max-w-[340px] lg:max-w-[300px]" />
         </div>
       </div>
     )

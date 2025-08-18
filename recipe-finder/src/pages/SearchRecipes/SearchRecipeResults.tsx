@@ -1,4 +1,5 @@
 import ResultCard from "../../components/ResultCard";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useState, useEffect, } from "react"
 import { fetchSearchResults } from "../../api/spoonacularResults";
 
@@ -30,6 +31,20 @@ export default function SearchRecipeResults({ query }: Props) {
       handleSearch()
     }
   }, [query])
+
+  if (!recipes) {
+    return (
+      <div className="mt-10 mb-20">
+        <div className="flex flex-col gap-6 lg:gap-12 ">
+          <Skeleton className="h-[70px] w-full md:max-w-[340px] lg:max-w-[500px]" />
+          <Skeleton className="h-[70px] w-full md:max-w-[340px] lg:max-w-[500px]" />
+          <Skeleton className="h-[70px] w-full md:max-w-[340px] lg:max-w-[500px]" />
+          <Skeleton className="h-[70px] w-full md:max-w-[340px] lg:max-w-[500px]" />
+          <Skeleton className="h-[70px] w-full md:max-w-[340px] lg:max-w-[500px]" />
+        </div>
+      </div>
+    )
+  }
 
   return (
     <section className="search-recipe-results mt-10 mb-20">
