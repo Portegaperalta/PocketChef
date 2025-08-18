@@ -9,6 +9,8 @@ import VegetarianIcon from './ui/VegetarianIcon'
 import GlutenFreeIcon from './ui/GlutenFreeIcon';
 import VeryHealthyIcon from './ui/VeryHealthyIcon';
 import DairyFreeIcon from './ui/DairyFreeIcon';
+import SaveRecipeButton from './ui/SaveRecipeButton'
+import ShareRecipeButton from './ui/ShareRecipeButton'
 import decimalToFraction from '@/utils/decimalToFraction'
 
 type Ingredient = {
@@ -104,11 +106,19 @@ export default function BenefitRecipeInfo() {
         </div>
         <div className="recipe-info-middle flex flex-col space-y-4 
           md:flex-col md:space-y-10 lg:flex-row gap-8">
-          <img
-            src={recipeInfo.image}
-            alt="recipe image"
-            className='shadow-md w-full lg:max-w-160 rounded-md'
-          />
+          <div className="recipe-image">
+            <img src={recipeInfo.image}
+              alt="recipe image"
+              className='shadow-md w-full mb-8 lg:max-w-160 rounded-md' />
+            <div className="recipe-info-options flex gap-2">
+              <div className="save-recipe">
+                <SaveRecipeButton />
+              </div>
+              <div className="share-recipe">
+                <ShareRecipeButton />
+              </div>
+            </div>
+          </div>
           <div className="recipe-info-summary w-full">
             <h3 className='text-(--clr-secondary) text-[1.4rem] 
             font-[500] mb-2 md:text-[1.6rem]'>
