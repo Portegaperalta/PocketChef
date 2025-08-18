@@ -13,7 +13,7 @@
 
 <ul>
   <li>Search recipes</li>
-  <li>Clean and modern UI (TailwindCSS)</li>
+  <li>Clean and modern UI (Shadcn / TailwindCSS)</li>
   <li>View recipe summaries and benefits</li>
   <li>Save your favorite recipes</li>
   <li>Fully responsive layout</li>
