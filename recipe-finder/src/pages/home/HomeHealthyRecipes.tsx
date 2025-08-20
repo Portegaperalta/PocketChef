@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css';
 import RecipeCard from "../../components/RecipeCard";
 import { Skeleton } from "@/components/ui/skeleton";
 import FetchHealthyRecipes from "@/api/FetchHealthyRecipes";
@@ -91,20 +93,30 @@ export default function HomeHealthyRecipes() {
           </a>
         </div>
       </div>
-      <div className="healthy-recipes-bottom flex flex-row justify-center
-      md:justify-between flex-wrap">
-        {
-          healthyRecipes.map((recipe: HealthyRecipe) => (
-            <RecipeCard
-              key={recipe.id}
-              title={recipe.title}
-              extendedIngredients={recipe.extendedIngredients}
-              diets={recipe.diets}
-              spoonacularScore={transformScore(recipe.spoonacularScore)}
-              image={recipe.image}
-            />
-          ))
-        }
+      <div className="healthy-recipes-bottom w-full">
+        <Swiper
+          slidesPerView={2}
+          spaceBetween={20}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
+        >
+          {
+            healthyRecipes.map((recipe: HealthyRecipe) => (
+              <SwiperSlide key={recipe.id}>
+                <RecipeCard
+                  title={recipe.title}
+                  extendedIngredients={recipe.extendedIngredients}
+                  diets={recipe.diets}
+                  spoonacularScore={transformScore(recipe.spoonacularScore)}
+                  image={recipe.image}
+                />
+              </SwiperSlide>
+            ))
+          }
+        </Swiper>
       </div>
     </section>
   )

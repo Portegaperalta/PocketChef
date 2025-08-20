@@ -27,16 +27,16 @@ export default function RecipeCard(props: RecipeCardProps) {
           />
         </div>
         <div className="recipe-card-name">
-          <h3 className="text-(--clr-secondary) text-[1.4rem] 
-            font-[600]">
-            {truncateTitle(props.title)}
+          <h3 className="text-(--clr-secondary) text-[1.2rem] 
+            text-center font-[600] md:text-[1.4rem]">
+            {truncateTitle(props.title, 18)}
           </h3>
         </div>
         <div className="recipe-card-info flex flex-row items-center
            gap-4">
           <p className="text-(--clr-quick-silver) text-[1.1rem]
              font-[500]">
-            {`${props.extendedIngredients[0].nameClean} & ${props.extendedIngredients[1].nameClean}`}
+
           </p>
           <RatingLabel rating={props.spoonacularScore} />
         </div>

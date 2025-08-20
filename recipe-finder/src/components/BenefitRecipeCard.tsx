@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import transformScore from '@/utils/transformScore';
 import { Link } from 'react-router';
+import truncateTitle from '@/utils/truncateTitle';
 
 type BenefitRecipeCardProps = {
   id: number,
@@ -33,7 +34,7 @@ export default function BenefitRecipeCard(props: BenefitRecipeCardProps) {
           <div className="benefit-recipe-text">
             <h3 className='benefit-recipe-title text-(--clr-secondary) 
           font-[600] mb-1 lg:text-[1.4rem] lg:font-[700]'>
-              {props.Name}
+              {truncateTitle(props.Name, 42)}
             </h3>
           </div>
         </Link>
