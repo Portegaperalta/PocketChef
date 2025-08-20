@@ -62,12 +62,9 @@ export default function HomeHealthyRecipes() {
           </h2>
         </div>
         <div className="healthy-recipes-links flex items-center justify-between">
-          <p className="text-(--clr-primary) text-[1.4rem] font-[500]">With Features</p>
-          <a href="#"
-            className="text-(--clr-quick-silver) text-[1rem]"
-          >
-            See all
-          </a>
+          <p className="text-(--clr-primary) text-[1.4rem] font-[500]">
+            With Features
+          </p>
         </div>
       </div>
       <div className="healthy-recipes-bottom w-full">

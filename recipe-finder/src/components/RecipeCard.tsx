@@ -40,7 +40,7 @@ export default function RecipeCard(props: RecipeCardProps) {
         items-center gap-4">
           <p className="text-(--clr-quick-silver) text-[1.1rem]
           font-[500]">
-
+            {`${props.diets[0]}`}
           </p>
           <RatingLabel rating={props.spoonacularScore} />
         </div>

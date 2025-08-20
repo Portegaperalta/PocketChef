@@ -9,11 +9,6 @@ export default function HomeMainContent() {
         <p className="text-(--clr-primary) text-[1.4rem] font-[500]">
           With Benefits
         </p>
-        <a href="#"
-          className="text-(--clr-quick-silver) text-[1rem] md:hidden"
-        >
-          See all
-        </a>
       </div>
       <div className="content grid grid-flow-row md:gap-8 lg:gap-40 md:mt-10 md:grid-flow-col
        md:grid-cols-2">
