@@ -15,48 +15,20 @@ type HealthyRecipe = {
   image: string,
 }
 
-/* const featuresRecipes: HealthyRecipe[] = [
-  {
-    id: 1,
-    Name: "Keto Salad",
-    ingredientsSumary: "Beans & Fruits",
-    Rating: 4.5,
-    ImageUrl: KetoSaladCardImg,
-  },
-  {
-    id: 2,
-    Name: "Sewers Salad",
-    ingredientsSumary: "Chicken & dal",
-    Rating: 4.5,
-    ImageUrl: SewersSaladCardImg,
-  },
-  {
-    id: 3,
-    Name: "Keto Salad",
-    ingredientsSumary: "Beans & Fruits",
-    Rating: 4.5,
-    ImageUrl: KetoSaladCardImg,
-  },
-  {
-    id: 4,
-    Name: "Sewers Salad",
-    ingredientsSumary: "Chicken & dal",
-    Rating: 4.5,
-    ImageUrl: SewersSaladCardImg,
-  },
-] */
-
 export default function HomeHealthyRecipes() {
   const [healthyRecipes, setHealthyRecipes] = useState<any>(null)
 
   const getHealthyRecipes = async () => {
     const healthyRecipesData = await FetchHealthyRecipes()
+    // saves fetched recipes to session storage 
     sessionStorage.setItem('healthyRecipes', JSON.stringify(healthyRecipesData))
     setHealthyRecipes(healthyRecipesData)
   }
 
   useEffect(() => {
     const storedHealthyRecipes = sessionStorage.getItem('healthyRecipes')
+    /* checks if fetched recipes are already in session storage 
+    to avoid fetching every time */
     if (storedHealthyRecipes) {
       setHealthyRecipes(JSON.parse(storedHealthyRecipes))
     } else {

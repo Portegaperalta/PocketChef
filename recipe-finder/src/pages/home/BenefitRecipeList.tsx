@@ -16,11 +16,18 @@ export default function BenefitRecipeList() {
 
   const getRecipes = async () => {
     const data = await FetchRecipesWithBenefits()
+    // saves fetched recipes to session storage 
+    sessionStorage.setItem('recipesWithBenefits', JSON.stringify(data))
     setRecipes(data)
   }
 
   useEffect(() => {
-    getRecipes()
+    const storedRecipesWithBenefits = sessionStorage.getItem('recipesWithBenefits')
+    if (storedRecipesWithBenefits) {
+      setRecipes(JSON.parse(storedRecipesWithBenefits))
+    } else {
+      getRecipes()
+    }
   }, [])
 
   if (!recipes) {
