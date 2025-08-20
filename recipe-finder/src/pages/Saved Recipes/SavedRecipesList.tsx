@@ -17,6 +17,7 @@ export default function SavedRecipesList() {
         {
           savedRecipes.map((savedRecipe) => (
             <SavedRecipeCard
+              key={savedRecipe.id}
               id={savedRecipe.id}
               title={savedRecipe.title}
               image={savedRecipe.image}
