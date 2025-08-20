@@ -51,12 +51,17 @@ export default function HomeHealthyRecipes() {
 
   const getHealthyRecipes = async () => {
     const healthyRecipesData = await FetchHealthyRecipes()
-    console.log(healthyRecipesData)
+    sessionStorage.setItem('healthyRecipes', JSON.stringify(healthyRecipesData))
     setHealthyRecipes(healthyRecipesData)
   }
 
   useEffect(() => {
-    getHealthyRecipes()
+    const storedHealthyRecipes = sessionStorage.getItem('healthyRecipes')
+    if (storedHealthyRecipes) {
+      setHealthyRecipes(JSON.parse(storedHealthyRecipes))
+    } else {
+      getHealthyRecipes()
+    }
   }, [])
 
   if (!healthyRecipes) {
