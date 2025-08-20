@@ -1,5 +1,6 @@
 import truncateTitle from "@/utils/truncateTitle";
 import RatingLabel from "./ui/RatingLabel";
+import { Link } from "react-router";
 
 type Ingredient = {
   id: number,
@@ -8,6 +9,7 @@ type Ingredient = {
 }
 
 type RecipeCardProps = {
+  id: number,
   title: string,
   extendedIngredients?: Ingredient[],
   diets: string[]
@@ -17,11 +19,12 @@ type RecipeCardProps = {
 
 export default function RecipeCard(props: RecipeCardProps) {
   return (
-    <a href="#">
+    <Link to={`/Recipe/${props.id}`}>
       <div className="recipe-card flex flex-col 
       items-center gap-2 py-6 px-6 w-full max-w-70
-      shadow-lg rounded-t-full">
-        <div className="recipe-image w-full max-w-30 rounded-full">
+      shadow-md rounded-t-full">
+        <div className="recipe-image w-full max-w-30 
+        rounded-full">
           <img src={props.image}
             alt="recipe image"
             className="rounded-full h-28 shadow-lg"
@@ -33,15 +36,15 @@ export default function RecipeCard(props: RecipeCardProps) {
             {truncateTitle(props.title, 17)}
           </h3>
         </div>
-        <div className="recipe-card-info flex flex-row items-center
-           gap-4">
+        <div className="recipe-card-info flex flex-row 
+        items-center gap-4">
           <p className="text-(--clr-quick-silver) text-[1.1rem]
-             font-[500]">
+          font-[500]">
 
           </p>
           <RatingLabel rating={props.spoonacularScore} />
         </div>
       </div>
-    </a>
+    </Link>
   )
 }

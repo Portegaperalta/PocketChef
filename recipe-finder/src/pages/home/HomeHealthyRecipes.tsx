@@ -84,6 +84,7 @@ export default function HomeHealthyRecipes() {
             healthyRecipes.map((recipe: HealthyRecipe) => (
               <SwiperSlide key={recipe.id}>
                 <RecipeCard
+                  id={recipe.id}
                   title={recipe.title}
                   extendedIngredients={recipe.extendedIngredients}
                   diets={recipe.diets}
