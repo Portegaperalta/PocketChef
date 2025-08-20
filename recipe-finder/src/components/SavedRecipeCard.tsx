@@ -6,7 +6,7 @@ import RatingLabel from "./ui/RatingLabel"
 type Props = {
   id: number,
   title: string,
-  spoonacularRating: number,
+  spoonacularScore: number,
   image: string,
 }
 
@@ -36,7 +36,7 @@ export default function SavedRecipeCard(props: Props) {
         </Link>
       </div>
       <div className="benefit-recipe-rating hidden lg:inline-block">
-        <RatingLabel rating={transformScore(props.spoonacularRating)} />
+        <RatingLabel rating={transformScore(props.spoonacularScore)} />
       </div>
     </div>
   )
