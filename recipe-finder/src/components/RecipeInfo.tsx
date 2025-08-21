@@ -113,7 +113,7 @@ export default function RecipeInfo() {
               className='shadow-md w-full mb-8 lg:max-w-160 rounded-md' />
             <div className="recipe-info-options flex gap-2">
               <div className="save-recipe">
-                <SaveRecipeButton />
+                <SaveRecipeButton id={recipeInfo.id} />
               </div>
               <div className="share-recipe">
                 <ShareRecipeButton />

@@ -39,7 +39,7 @@ export default function ResultCard(props: ResultCardProps) {
         </div>
       </div>
       <div className="result-card-options">
-        <SaveRecipeButton />
+        <SaveRecipeButton id={props.id} />
       </div>
     </div>
   )
