@@ -1,5 +1,4 @@
 # Recipe-Finder-App
-🔍 A recipe finder app where users can look and save recipes
 
 <h2>⚙️ Technologies used:</h2>
 <ul>
