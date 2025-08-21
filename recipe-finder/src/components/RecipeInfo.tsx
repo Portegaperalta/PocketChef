@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import DOMPurify from "dompurify"
 import FetchRecipeById from '@/api/FetchRecipeById'
+import decimalToFraction from '@/utils/decimalToFraction'
 import { Skeleton } from "@/components/ui/skeleton"
 import { CircleSmall } from 'lucide-react';
 import VeganIcon from './ui/VeganIcon';
@@ -9,7 +10,6 @@ import VegetarianIcon from './ui/VegetarianIcon'
 import GlutenFreeIcon from './ui/GlutenFreeIcon';
 import VeryHealthyIcon from './ui/VeryHealthyIcon';
 import DairyFreeIcon from './ui/DairyFreeIcon';
-import decimalToFraction from '@/utils/decimalToFraction'
 import SaveRecipeButton from './ui/SaveRecipeButton'
 import ShareRecipeButton from './ui/ShareRecipeButton'
 

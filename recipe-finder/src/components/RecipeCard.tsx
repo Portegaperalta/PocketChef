@@ -1,6 +1,8 @@
 import truncateTitle from "@/utils/truncateTitle";
 import RatingLabel from "./ui/RatingLabel";
 import { Link } from "react-router";
+import capitalizeFirstLetter from '@/utils/capitalizeFirstLetter'
+
 
 type Ingredient = {
   id: number,
@@ -39,8 +41,8 @@ export default function RecipeCard(props: RecipeCardProps) {
         <div className="recipe-card-info flex flex-row 
         items-center gap-4">
           <p className="text-(--clr-quick-silver) text-[1.1rem]
-          font-[500]">
-            {`${props.diets[0]}`}
+          font-[500] hidden md:inline-block">
+            {`${capitalizeFirstLetter(props.diets[0])}`}
           </p>
           <RatingLabel rating={props.spoonacularScore} />
         </div>
