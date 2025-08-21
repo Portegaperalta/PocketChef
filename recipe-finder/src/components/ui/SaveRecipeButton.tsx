@@ -9,6 +9,7 @@ type Props = {
 
 export default function SaveRecipeButton(props: Props) {
   const [buttonBackground, setButtonBackground] = useState(false)
+  const savedRecipes = []
   const [savedRecipe, setSavedRecipe] = useState<any>(null)
 
   const saveRecipe = async () => {
