@@ -1,12 +1,10 @@
 export default function capitalizeFirstLetter(text: string) {
-  try {
-    if (text.length === 0) {
-      return ""
-    } else {
-      return text.charAt(0).toUpperCase() + text.slice(1)
-    }
+  if (!text) {
+    return "Very Healthy"
   }
-  catch (error) {
-    console.log(error)
+  else if (text.length === 0 || text.length === undefined) {
+    return ""
+  } else {
+    return text.charAt(0).toUpperCase() + text.slice(1)
   }
 }
