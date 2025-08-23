@@ -33,7 +33,7 @@ export default function BenefitRecipeCard(props: BenefitRecipeCardProps) {
         <Link to={`/Recipe-with-benefits/${props.id}`}>
           <div className="benefit-recipe-text">
             <h3 className='benefit-recipe-title text-(--clr-secondary) 
-          font-[600] mb-1 lg:text-[1.4rem] lg:font-[700]'>
+          font-[600] mb-1 lg:text-[1.4rem]'>
               {truncateTitle(props.Name, 42)}
             </h3>
           </div>

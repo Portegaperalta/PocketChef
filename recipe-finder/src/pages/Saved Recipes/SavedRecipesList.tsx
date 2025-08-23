@@ -15,15 +15,6 @@ type Recipe = {
 export default function SavedRecipesList() {
   const [recipes, setRecipes] = useState<any[]>([])
 
-  useEffect(() => {
-    try {
-      const fetchedRecipes = getFromSessionStorage('healthyRecipes')
-      setRecipes(fetchedRecipes)
-    } catch (error) {
-      console.log(`Error:${error}`)
-    }
-  }, [])
-
   if (!recipes) {
     return (
       <div className="mt-10 mb-20">
@@ -41,17 +32,7 @@ export default function SavedRecipesList() {
   return (
     <section className="saved-recipes-list mt-6">
       <ul id="savedRecipesList" className="flex flex-col gap-6">
-        {
-          recipes.map((recipe: Recipe) => (
-            <SavedRecipeCard
-              key={recipe.id}
-              id={recipe.id}
-              title={recipe.title}
-              spoonacularScore={recipe.spoonacularScore}
-              image={recipe.image}
-            />
-          ))
-        }
+
       </ul>
     </section>
   )
