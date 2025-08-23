@@ -59,17 +59,39 @@ export default function RecipeInfo() {
   if (!recipeInfo) {
     return (
       <main className='mt-10 px-6 lg:px-30'>
-        <div className="flex flex-col space-y-3 md:flex-row md:items-center md:gap-10">
-          <div className="space-y-4">
-            <Skeleton className="h-6 w-[250px]" />
-            <Skeleton className="h-4 w-[200px]" />
-            <Skeleton className="h-[200px] w-[340px] rounded-xl md:w-[400px] md:h-[240px] lg:w-[450px] lg:h-[260px]" />
+        <div className="flex flex-col">
+          <div className="skeleton-top flex flex-col gap-6">
+            <div className="space-y-4">
+              <Skeleton className="h-4 w-[250px]" />
+              <Skeleton className="h-4 w-[200px]" />
+              <Skeleton className="h-[200px] w-[340px] rounded-xl md:w-[600px] 
+            md:h-[300px] lg:w-[450px] lg:h-[260px]" />
+            </div>
+            <div className="space-y-4 md:space-y-4">
+              <Skeleton className="h-4 w-full max-w-[340px] md:max-w-[500px]" />
+              <Skeleton className="h-4 w-full max-w-[340px] md:max-w-[500px]" />
+              <Skeleton className="h-4 w-full max-w-[340px] md:max-w-[500px]" />
+              <Skeleton className="h-4 w-full max-w-[340px] md:max-w-[500px]" />
+              <Skeleton className="h-4 w-full max-w-[340px] md:max-w-[500px]" />
+            </div>
           </div>
-          <div className="space-y-2 md:space-y-4">
-            <Skeleton className="h-4 w-[250px]" />
-            <Skeleton className="h-4 w-[270px]" />
-            <Skeleton className="h-4 w-[270px]" />
-            <Skeleton className="h-4 w-[270px]" />
+          <div className="skeleton-bottom mt-6 space-y-4 md:space-y-4">
+            <div className="flex flex-row items-center gap-4">
+              <Skeleton className="h-4 w-[18px] rounded-full" />
+              <Skeleton className="h-4 w-full max-w-[130px] md:max-w-[100px]" />
+            </div>
+            <div className="flex flex-row items-center gap-4">
+              <Skeleton className="h-4 w-[18px] rounded-full" />
+              <Skeleton className="h-4 w-full max-w-[130px] md:max-w-[100px]" />
+            </div>
+            <div className="flex flex-row items-center gap-4">
+              <Skeleton className="h-4 w-[18px] rounded-full" />
+              <Skeleton className="h-4 w-full max-w-[130px] md:max-w-[100px]" />
+            </div>
+            <div className="flex flex-row items-center gap-4">
+              <Skeleton className="h-4 w-[18px] rounded-full" />
+              <Skeleton className="h-4 w-full max-w-[130px] md:max-w-[100px]" />
+            </div>
           </div>
         </div>
       </main>
