@@ -10,7 +10,6 @@ import RecipeInfo from './components/RecipeInfo'
 import BenefitRecipeInfo from './components/BenefitRecipeInfo'
 
 function App() {
-
   return (
     <>
       <Header />
