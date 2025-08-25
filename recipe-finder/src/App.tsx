@@ -8,8 +8,18 @@ import SavedRecipes from './pages/Saved Recipes/SavedRecipes'
 import UserProfile from './pages/UserProfile/UserProfile'
 import RecipeInfo from './components/RecipeInfo'
 import BenefitRecipeInfo from './components/BenefitRecipeInfo'
+import { useEffect } from 'react'
 
 function App() {
+
+  // creates empty savedRecipes array on session storage 
+  useEffect(() => {
+    const saved = sessionStorage.getItem('savedRecipes')
+    if (!saved) {
+      sessionStorage.setItem('savedRecipes', JSON.stringify([]))
+    }
+  }, [])
+
   return (
     <>
       <Header />

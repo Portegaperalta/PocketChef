@@ -15,6 +15,10 @@ type Recipe = {
 export default function SavedRecipesList() {
   const [recipes, setRecipes] = useState<any[]>([])
 
+  useEffect(() => {
+
+  }, [])
+
   if (!recipes) {
     return (
       <div className="mt-10 mb-20">

@@ -1,5 +1,4 @@
 import FetchRecipeById from '@/api/FetchRecipeById';
-import saveToSessionStorage from '@/utils/saveToSessionStorage';
 import { Bookmark } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -9,19 +8,20 @@ type Props = {
 
 export default function SaveRecipeButton(props: Props) {
   const [buttonBackground, setButtonBackground] = useState(false)
-  const [savedRecipe, setSavedRecipe] = useState<any>(null)
+  const savedRecipes = JSON.parse(sessionStorage.getItem('savedRecipes') || "[]")
+
+  const saveRecipe = async () => {
+    const recipeData = await FetchRecipeById(props.id)
+    if (recipeData != null) {
+      savedRecipes.push(recipeData)
+      sessionStorage.setItem('savedRecipes', JSON.stringify(savedRecipes))
+    }
+  }
 
   const HandleButtonClick = async () => {
     setButtonBackground(!buttonBackground)
-    const recipeData = await FetchRecipeById(props.id)
-    setSavedRecipe(recipeData)
+    saveRecipe()
   }
-
-  useEffect(() => {
-    if (savedRecipe) {
-      saveToSessionStorage('savedRecipes', JSON.stringify(savedRecipe))
-    }
-  }, [])
 
   return (
     <div
