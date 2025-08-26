@@ -5,7 +5,7 @@ export default function Footer() {
       items-start gap-4 md:flex-row lg:px-30">
         <div className="footer-company">
           <p className="text-[.9rem]">
-            ©2025 <span>Recipe Finder.</span>
+            ©2025 <span>PocketChef.</span>
           </p>
         </div>
         <div className="footer-terms">

@@ -5,7 +5,7 @@ export default function AppLogo() {
     <div className="app-logo">
       <Link to="/">
         <h1 className="text-(--clr-secondary) text-[1.9rem] font-[600]">
-          Recipe <span className="font-[400]">finder</span>
+          Pocket<span className="font-[400]">Chef</span>
         </h1>
       </Link>
     </div>
