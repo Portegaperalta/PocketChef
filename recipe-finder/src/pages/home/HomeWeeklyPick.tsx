@@ -1,8 +1,6 @@
 import { Link } from "react-router";
-import { Bookmark } from "lucide-react";
 import StartCookButton from "../../components/ui/StartCookButton";
 import WeeklyPickImage from "../../images/weekly-pick-img.jpg"
-import SaveRecipeButton from "@/components/ui/SaveRecipeButton";
 
 export default function HomeWeeklyPick() {
   return (
@@ -13,10 +11,7 @@ export default function HomeWeeklyPick() {
       style={{ backgroundImage: `url(${WeeklyPickImage})` }}
       className="home-weekly-pick w-full max-w-152 bg-no-repeat bg-cover rounded-2xl"
     >
-      <div className="weekly-pick-top py-8 px-4 flex justify-between">
-        <div className="bg-(--clr-bg-blur) py-1 px-2 rounded-md">
-          <SaveRecipeButton id={657379} />
-        </div>
+      <div className="weekly-pick-top py-8 px-4 flex flex-row justify-end">
         <div className="recipe-link-button">
           <Link to={`/Recipe/${657379}`}>
             <StartCookButton />
