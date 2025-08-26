@@ -10,7 +10,7 @@ export default function HomeMainContent() {
           With Benefits
         </p>
       </div>
-      <div className="content grid grid-flow-row md:gap-8 lg:gap-40 md:mt-10 md:grid-flow-col
+      <div className="grid grid-flow-row md:gap-8 lg:gap-14 md:mt-10 md:grid-flow-col
        md:grid-cols-2">
         <div className="row-span-2 grid-rows-subgrid mb-8 md:mb-0">
           <BenefitRecipeList />

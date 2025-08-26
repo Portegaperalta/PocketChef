@@ -24,7 +24,14 @@ function App() {
   return (
     <>
       <Header />
-      <Toaster className='border-b-1 border-b-(--clr-primary)' />
+      <Toaster position='bottom-right'
+        richColors
+        toastOptions={{
+          style: {
+            borderBottom: "2px solid #F6B100"
+          }
+        }}
+      />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Recipe-with-benefits/:id' element={<BenefitRecipeInfo />} />
