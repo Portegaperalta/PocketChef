@@ -25,7 +25,8 @@ export default function BenefitRecipeCard(props: BenefitRecipeCardProps) {
         className="benefit-recipe-card py-2 px-4 flex gap-4 items-center 
         bg-(--clr-white) shadow-lg rounded-lg">
         <div className="benefit-recipe-image w-full py-10 max-w-25 rounded-md 
-         bg-cover bg-no-repeat md:max-w-26 md:h-18 lg:max-w-40 lg:py-12"
+         bg-cover bg-center bg-no-repeat duration-300 ease-in-out md:max-w-26 
+         lg:max-w-40 lg:py-12"
           style={{ backgroundImage: `url(${props.ImageUrl})` }}
         >
         </div>
