@@ -4,7 +4,6 @@ import 'aos/dist/aos.css';
 import transformScore from '@/utils/transformScore';
 import { Link } from 'react-router';
 import truncateTitle from '@/utils/truncateTitle';
-import { useState } from 'react';
 
 type BenefitRecipeCardProps = {
   id: number,
