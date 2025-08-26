@@ -1,4 +1,4 @@
-# Recipe-Finder-App
+# PocketChef
 
 <h2>⚙️ Technologies used:</h2>
 <ul>
