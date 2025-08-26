@@ -1,4 +1,4 @@
-# PocketChef
+# PocketChef - Recipe finder app
 
 <h2>⚙️ Technologies used:</h2>
 <ul>
@@ -54,6 +54,11 @@
    ```bash
    npm run dev
    ```
+
+<h2>Design inspiration:</h2>
+
+https://www.figma.com/community/file/1295731953733971051/recipe-finder-app-landinge-pageresponsive-design
+
 <h2>🤝Contributing</h2>
 Contributions, issues, and feature requests are welcome!
 Feel free to fork this repo and submit a pull request.
