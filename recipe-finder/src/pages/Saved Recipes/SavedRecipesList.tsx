@@ -7,19 +7,20 @@ type Recipe = {
   id: number,
   title: string,
   image: string,
-  spoonacularScore?: number | undefined,
+  spoonacularScore: number,
   ingredientsSumary?: string,
   BenefitSummary?: string,
 }
 
 export default function SavedRecipesList() {
-  const [recipes, setRecipes] = useState<any[]>([])
+  const [savedRecipes, setSavedRecipes] = useState<any[]>([])
 
   useEffect(() => {
-
+    const savedRecipesData = getFromSessionStorage('savedRecipes')
+    setSavedRecipes(savedRecipesData)
   }, [])
 
-  if (!recipes) {
+  if (!savedRecipes) {
     return (
       <div className="mt-10 mb-20">
         <div className="flex flex-col gap-6 lg:gap-12 ">
@@ -35,9 +36,18 @@ export default function SavedRecipesList() {
 
   return (
     <section className="saved-recipes-list mt-6">
-      <ul id="savedRecipesList" className="flex flex-col gap-6">
-
-      </ul>
+      <div id="savedRecipesList" className="flex flex-col gap-6">
+        {
+          savedRecipes.map((savedRecipe: Recipe) => (
+            <SavedRecipeCard key={savedRecipe.id}
+              id={savedRecipe.id}
+              title={savedRecipe.title}
+              spoonacularScore={savedRecipe.spoonacularScore}
+              image={savedRecipe.image}
+            />
+          ))
+        }
+      </div>
     </section>
   )
 }
