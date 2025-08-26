@@ -17,8 +17,7 @@ export default function ResultCard(props: ResultCardProps) {
       data-aos-once="true"
       className="result-card py-2 px-4 flex gap-4 items-center
      justify-between bg-(--clr-white) w-full max-w-120 shadow-lg rounded-lg
-     lg:max-w-160
-     ">
+     h-full lg:max-w-160">
       <div className="benefit-recipe-img">
         <img className='w-full max-w-26 lg:max-w-50 rounded-md' src={props.image} alt={`${props.Name} image`} />
       </div>

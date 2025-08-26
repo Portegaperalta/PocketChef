@@ -1,6 +1,6 @@
 import FetchRecipeById from '@/api/FetchRecipeById';
 import { Bookmark } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 type Props = {
   id: number
