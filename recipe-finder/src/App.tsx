@@ -9,6 +9,7 @@ import UserProfile from './pages/UserProfile/UserProfile'
 import RecipeInfo from './components/RecipeInfo'
 import BenefitRecipeInfo from './components/BenefitRecipeInfo'
 import { useEffect } from 'react'
+import { Toaster } from './components/ui/sonner'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
   return (
     <>
       <Header />
+      <Toaster className='border-b-1 border-b-(--clr-primary)' />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Recipe-with-benefits/:id' element={<BenefitRecipeInfo />} />

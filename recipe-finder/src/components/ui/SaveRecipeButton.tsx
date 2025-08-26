@@ -1,6 +1,7 @@
 import FetchRecipeById from '@/api/FetchRecipeById';
 import { Bookmark } from 'lucide-react';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 type Props = {
   id: number
@@ -21,6 +22,7 @@ export default function SaveRecipeButton(props: Props) {
   const HandleButtonClick = async () => {
     setButtonBackground(!buttonBackground)
     saveRecipe()
+    toast("Recipe saved")
   }
 
   return (
