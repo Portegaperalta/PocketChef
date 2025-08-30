@@ -12,6 +12,7 @@ import VeryHealthyIcon from './ui/VeryHealthyIcon';
 import DairyFreeIcon from './ui/DairyFreeIcon';
 import SaveRecipeButton from './ui/SaveRecipeButton'
 import ShareRecipeButton from './ui/ShareRecipeButton'
+import checkIngredientMeasure from '@/utils/checkIngredientMeasure'
 
 type Ingredient = {
   aisle: string,
@@ -162,13 +163,14 @@ export default function RecipeInfo() {
             <ul className='mt-2 pl-0 w-full md:max-w-140 grid gap-4 md:grid-cols-2'>
               {
                 recipeInfo.extendedIngredients.map((ingredient: Ingredient) => (
-                  <li key={ingredient.name} className='text-(--clr-secondary) text-[1.2rem] font-[500]
+                  <li key={ingredient.id} className='text-(--clr-secondary) text-[1.2rem] font-[500]
                      md:text-[1.1rem] flex items-center gap-1'>
                     <CircleSmall color='#F6B100' size={16} />
                     <div className="">
                       {
                         `${decimalToFraction(ingredient.measures.us.amount)}
                          ${ingredient.measures.us.unitShort}
+                         ${checkIngredientMeasure(ingredient.measures.us.unitShort)}
                          ${ingredient.name}`
                       }
                     </div>

@@ -139,7 +139,7 @@ export default function BenefitRecipeInfo() {
             <ul className='mt-2 pl-0 w-full md:max-w-140 grid gap-4 md:grid-cols-2'>
               {
                 recipeInfo.extendedIngredients.map((ingredient: Ingredient) => (
-                  <li key={ingredient.name} className='text-(--clr-secondary) text-[1.2rem] font-[500]
+                  <li key={ingredient.id} className='text-(--clr-secondary) text-[1.2rem] font-[500]
                      md:text-[1.1rem] flex items-center gap-1'>
                     <CircleSmall color='#F6B100' size={16} />
                     <div className="">

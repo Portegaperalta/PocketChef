@@ -9,6 +9,7 @@ type Props = {
 
 export default function SaveRecipeButton(props: Props) {
   const [buttonBackground, setButtonBackground] = useState(false)
+
   const savedRecipes = JSON.parse(sessionStorage.getItem('savedRecipes') || "[]")
 
   const saveRecipe = async () => {
@@ -21,7 +22,7 @@ export default function SaveRecipeButton(props: Props) {
 
   const HandleButtonClick = async () => {
     setButtonBackground(!buttonBackground)
-    saveRecipe()
+    await saveRecipe()
     toast("Recipe saved")
   }
 
