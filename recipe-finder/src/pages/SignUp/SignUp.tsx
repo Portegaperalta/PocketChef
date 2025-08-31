@@ -7,11 +7,11 @@ export default function SignUp() {
       <SignUpForm />
       <section className="sign-in-link mt-8">
         <div className="text-center">
-          <p className="text-(--clr-secondary) text-[1.1rem] mb-1">
+          <p className="text-(--clr-secondary) text-[1.1rem] font-[500] mb-1">
             Already have a PocketChef account?
           </p>
           <Link to="/SignIn"
-            className="text-[1.1rem] text-(--clr-primary) underline">
+            className="text-(--clr-primary) text-[1.1rem] font-[500] underline">
             Sign In
           </Link>
         </div>
