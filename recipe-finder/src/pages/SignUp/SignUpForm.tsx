@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Eye, EyeOff } from "lucide-react"
+import SignUpFormButton from "@/components/ui/SignUpFormButton"
 
 export default function SignUpForm() {
   const [passwordInput, setPasswordInput] = useState("")
@@ -82,6 +83,9 @@ export default function SignUpForm() {
             className="text-(--clr-secondary) text-[1.1rem] font-[500] 
             outline-none w-full"
           />
+        </div>
+        <div className="">
+          <SignUpFormButton />
         </div>
       </form>
     </section>
