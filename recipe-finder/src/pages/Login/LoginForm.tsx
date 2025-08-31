@@ -10,7 +10,7 @@ export default function LoginForm() {
             placeholder="Username"
             autoComplete="off"
             className="text-(--clr-secondary) text-[1.1rem] border-2 border-(--clr-secondary) 
-            py-2 px-1 rounded-md outline-none w-full"
+            py-2 px-2 rounded-md outline-none w-full"
           />
         </div>
         <div className="password-input">
@@ -19,7 +19,7 @@ export default function LoginForm() {
             placeholder="Password"
             autoComplete="off"
             className="text-(--clr-secondary) text-[1.1rem] border-2 border-(--clr-secondary) 
-            py-2 px-1 rounded-md outline-none w-full"
+            py-2 px-2 rounded-md outline-none w-full"
           />
         </div>
       </form>
