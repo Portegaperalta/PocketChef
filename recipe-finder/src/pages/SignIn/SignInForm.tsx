@@ -4,7 +4,7 @@ import { EyeOff } from 'lucide-react';
 import { useState } from 'react';
 
 export default function LoginForm() {
-  const [passwordInput, setPasswordInput] = useState("")
+  const [_passwordInput, setPasswordInput] = useState("")
   const [isPasswordVisible, SetIsPasswordVisible] = useState(false)
 
   const updatePasswordInput = (e: React.ChangeEvent<HTMLInputElement>) => {

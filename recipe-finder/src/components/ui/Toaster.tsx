@@ -1,8 +1,4 @@
-type Props = {
-  onClick: () => void
-}
-
-export default function Toaster(props: Props) {
+export default function Toaster() {
   return (
     <div
       data-aos="fade-up"

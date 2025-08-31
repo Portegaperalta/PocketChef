@@ -3,7 +3,7 @@ import { Eye, EyeOff } from "lucide-react"
 import SignUpFormButton from "@/components/ui/SignUpFormButton"
 
 export default function SignUpForm() {
-  const [passwordInput, setPasswordInput] = useState("")
+  const [_passwordInput, setPasswordInput] = useState("")
   const [isPasswordVisible, SetIsPasswordVisible] = useState(false)
 
   const updatePasswordInput = (e: React.ChangeEvent<HTMLInputElement>) => {
