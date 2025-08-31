@@ -33,7 +33,7 @@ export default function LoginForm() {
         </div>
         <div className="password-input py-2 px-2 flex flex-row 
         items-center border-2 border-(--clr-secondary) rounded-md">
-          <input type="password"
+          <input type={`${isPasswordVisible ? `text` : `password`}`}
             id="userPassword"
             placeholder="Password"
             autoComplete="off"
