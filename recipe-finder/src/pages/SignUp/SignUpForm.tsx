@@ -3,7 +3,6 @@ import { Eye, EyeOff } from "lucide-react"
 import SignUpFormButton from "@/components/ui/SignUpFormButton"
 
 export default function SignUpForm() {
-  const [confirmPasswordInput, setConfirmPasswordInput] = useState("")
   const [passwordInput, setPasswordInput] = useState("")
   const [isPasswordVisible, SetIsPasswordVisible] = useState(false)
 
@@ -19,11 +18,16 @@ export default function SignUpForm() {
     SetIsPasswordVisible(false)
   }
 
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+  }
+
   return (
     <section className="mt-8">
       <form
-        action="#"
         id="signUpForm"
+        action="#"
+        onSubmit={handleFormSubmit}
         className="flex flex-col items-center gap-6"
       >
         <div className="username-input py-2 px-4 flex flex-row 
@@ -57,7 +61,7 @@ export default function SignUpForm() {
           <input type={`${isPasswordVisible ? `text` : `password`}`}
             id="userPassword"
             placeholder="Password"
-            pattern="^(?=.*[A-Z])(?=.*\d).{8,}$"
+            minLength={8}
             autoComplete="off"
             required
             onChange={updatePasswordInput}

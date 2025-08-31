@@ -19,9 +19,16 @@ export default function LoginForm() {
     SetIsPasswordVisible(false)
   }
 
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+  }
+
   return (
     <section className="login-form mt-8">
-      <form id="signInForm" action="#"
+      <form
+        id="signInForm"
+        action="#"
+        onSubmit={handleFormSubmit}
         className="flex flex-col gap-6 items-center">
         <div className="username-input py-2 px-4 flex flex-row 
          items-center border-2 border-(--clr-secondary) rounded-md
