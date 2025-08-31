@@ -2,6 +2,8 @@
 
 Live Preview: https://pocketchef-seven.vercel.app/
 
+Screenshot: <img/>
+
 <h2>⚙️ Technologies used:</h2>
 <ul>
   <li>React</li>
