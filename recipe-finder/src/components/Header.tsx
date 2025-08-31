@@ -67,11 +67,11 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/Profile">
+              <Link to="/Login">
                 <div className="account-link flex flex-row gap-1">
                   <UserRound color="#FFFFFF" />
                   <p className="text-(--clr-white) text-[1.1rem] font-[500]">
-                    Your Account
+                    Sign In
                   </p>
                 </div>
               </Link>

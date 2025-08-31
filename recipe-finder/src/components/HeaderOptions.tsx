@@ -10,7 +10,7 @@ export default function HeaderOptions() {
       <Link to="/Saved-Recipes">
         <Bookmark color="#FFFF" />
       </Link>
-      <Link to="/Profile">
+      <Link to="/Login">
         <UserRound color="#FFFF" />
       </Link>
     </div>
