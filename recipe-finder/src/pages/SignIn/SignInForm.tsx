@@ -30,6 +30,7 @@ export default function LoginForm() {
             id="username"
             placeholder="Username"
             autoComplete="off"
+            required
             className="text-(--clr-secondary) text-[1.1rem] font-[500]
             outline-none w-full"
           />
@@ -41,6 +42,7 @@ export default function LoginForm() {
             id="userPassword"
             placeholder="Password"
             autoComplete="off"
+            required
             onChange={updatePasswordInput}
             className="text-(--clr-secondary) text-[1.1rem] font-[500] 
             outline-none w-full"

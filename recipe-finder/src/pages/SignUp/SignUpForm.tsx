@@ -3,6 +3,7 @@ import { Eye, EyeOff } from "lucide-react"
 import SignUpFormButton from "@/components/ui/SignUpFormButton"
 
 export default function SignUpForm() {
+  const [confirmPasswordInput, setConfirmPasswordInput] = useState("")
   const [passwordInput, setPasswordInput] = useState("")
   const [isPasswordVisible, SetIsPasswordVisible] = useState(false)
 
@@ -32,6 +33,8 @@ export default function SignUpForm() {
             id="username"
             placeholder="Username"
             autoComplete="off"
+            minLength={1}
+            required
             className="text-(--clr-secondary) text-[1.1rem] font-[500]
             outline-none w-full"
           />
@@ -43,6 +46,7 @@ export default function SignUpForm() {
             id="userEmail"
             placeholder="Email"
             autoComplete="on"
+            required
             className="text-(--clr-secondary) text-[1.1rem] font-[500]
             outline-none w-full"
           />
@@ -55,6 +59,7 @@ export default function SignUpForm() {
             placeholder="Password"
             pattern="^(?=.*[A-Z])(?=.*\d).{8,}$"
             autoComplete="off"
+            required
             onChange={updatePasswordInput}
             className="text-(--clr-secondary) text-[1.1rem] font-[500] 
             outline-none w-full"
