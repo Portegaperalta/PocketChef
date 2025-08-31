@@ -20,7 +20,8 @@ export default function Header() {
   }, [location])
 
   return (
-    <header className="bg-(--clr-primary) px-6 py-4 relative md:px-16 lg:px-30">
+    <header className="bg-(--clr-primary) px-6 py-4 fixed w-full z-100
+    md:px-16 lg:px-30">
       <div className="header-content flex flex-col md:items-center md:justify-between md:flex-row">
         <div className="header-content-left mb-2 flex flex-row items-center justify-between
         md:mb-0 md:flex-col">
