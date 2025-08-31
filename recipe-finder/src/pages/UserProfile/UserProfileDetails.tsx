@@ -7,7 +7,7 @@ export default function UserProfileDetails() {
           font-[600]">Name:</p>
           <p className="text-(--clr-secondary) text-[1.1rem]
           font-[500]">
-            Guest User
+
           </p>
         </div>
         <div className="user-bio flex flex-row items-center gap-2">
@@ -17,7 +17,7 @@ export default function UserProfileDetails() {
           </p>
           <p className="text-(--clr-secondary) text-[1.1rem]
           font-[500]">
-            Food enthusiast
+
           </p>
         </div>
         <div className="user-email flex flex-row items-center gap-2">
@@ -27,7 +27,7 @@ export default function UserProfileDetails() {
           </p>
           <p className="text-(--clr-secondary) text-[1.1rem]
           font-[500]">
-            example@email.com
+
           </p>
         </div>
       </div>

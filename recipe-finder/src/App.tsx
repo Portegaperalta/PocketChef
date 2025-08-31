@@ -10,6 +10,7 @@ import RecipeInfo from './components/RecipeInfo'
 import BenefitRecipeInfo from './components/BenefitRecipeInfo'
 import { useEffect } from 'react'
 import { Toaster } from './components/ui/sonner'
+import Login from './pages/Login/Login'
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
         <Route path='/Search-Recipe' element={<SearchRecipes />} />
         <Route path='/Recipe/:id' element={<RecipeInfo />} />
         <Route path='/Saved-Recipes' element={<SavedRecipes />} />
+        <Route path='/Login' element={<Login />} />
         <Route path='/Profile' element={<UserProfile />} />
       </Routes>
       <Footer />
