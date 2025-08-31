@@ -1,5 +1,7 @@
 # PocketChef - Recipe finder app
 
+Live Preview: https://pocketchef-seven.vercel.app/
+
 <h2>⚙️ Technologies used:</h2>
 <ul>
   <li>React</li>
