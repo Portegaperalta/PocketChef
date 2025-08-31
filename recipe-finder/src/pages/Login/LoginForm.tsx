@@ -1,7 +1,23 @@
 import { Eye } from 'lucide-react';
 import { EyeOff } from 'lucide-react';
+import { useState } from 'react';
 
 export default function LoginForm() {
+  const [passwordInput, setPasswordInput] = useState("")
+  const [isPasswordVisible, SetIsPasswordVisible] = useState(false)
+
+  const updatePasswordInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPasswordInput(e.target.value)
+  }
+
+  const showPassword = () => {
+    SetIsPasswordVisible(true)
+  }
+
+  const hidePassword = () => {
+    SetIsPasswordVisible(false)
+  }
+
   return (
     <section className="login-form mt-8">
       <form id="loginForm" className="flex flex-col gap-4">
@@ -21,13 +37,20 @@ export default function LoginForm() {
             id="userPassword"
             placeholder="Password"
             autoComplete="off"
+            onChange={updatePasswordInput}
             className="text-(--clr-secondary) text-[1.1rem] font-[500] 
             outline-none w-full"
           />
-          <div className="show-password-btn">
+          <div
+            onClick={showPassword}
+            className={`show-password-btn ${isPasswordVisible ? `hidden` : `inline-block`} 
+            cursor-pointer`}>
             <Eye />
           </div>
-          <div className="hide-password-btn hidden">
+          <div
+            onClick={hidePassword}
+            className={`hide-password-btn hidden ${isPasswordVisible ? `inline-block` : `hidden`} 
+            cursor-pointer`}>
             <EyeOff />
           </div>
         </div>
