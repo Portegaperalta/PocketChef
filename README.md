@@ -2,7 +2,7 @@
 
 Live Preview: https://pocketchef-seven.vercel.app/
 
-Screenshot:  <img src="pocket-chef-home-sc.png" alt="PocketChef Screenshot"/>
+Screenshot:  <img src="/pocket-chef-sc.png" alt="PocketChef Screenshot"/>
 
 <h2>⚙️ Technologies used:</h2>
 <ul>
