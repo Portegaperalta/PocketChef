@@ -19,7 +19,7 @@ export default function BenefitRecipeCard(props: BenefitRecipeCardProps) {
     <Link to={`/Recipe-with-benefits/${props.id}`} className='group'>
       <div
         data-aos="fade-right"
-        data-aos-duration="1000"
+        data-aos-duration="800"
         data-aos-once="true"
         className="benefit-recipe-card py-2 px-4 flex gap-4 items-center 
         bg-(--clr-white) shadow-lg rounded-lg">

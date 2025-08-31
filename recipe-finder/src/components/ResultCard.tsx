@@ -13,7 +13,7 @@ export default function ResultCard(props: ResultCardProps) {
   return (
     <div
       data-aos="fade-right"
-      data-aos-duration="1000"
+      data-aos-duration="800"
       data-aos-once="true"
       className="result-card py-2 px-4 flex gap-4 items-center
      justify-between bg-(--clr-white) w-full max-w-120 shadow-lg rounded-lg
