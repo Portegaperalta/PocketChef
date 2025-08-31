@@ -2,7 +2,7 @@
 
 Live Preview: https://pocketchef-seven.vercel.app/
 
-Screenshot:  <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="react" width="40" height="40"/>
+Screenshot:  <img src="pocket-chef-home-sc.png" alt="PocketChef Screenshot"/>
 
 <h2>⚙️ Technologies used:</h2>
 <ul>
