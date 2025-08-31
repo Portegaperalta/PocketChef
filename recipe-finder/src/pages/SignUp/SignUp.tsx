@@ -1,13 +1,10 @@
 import { Link } from "react-router";
+import SignUpForm from "./SignUpForm";
 
 export default function SignUp() {
   return (
     <main className="sign-up px-6 py-4 mt-4 md:px-16 lg:px-30">
-      <section className="sign-up-top text-center">
-        <h2 className="text-(--clr-secondary) text-[1.6rem] font-[600]">
-          Sign Up
-        </h2>
-      </section>
+      <SignUpForm />
       <section className="sign-in-link mt-8">
         <div className="text-center">
           <p className="text-(--clr-secondary) text-[1.1rem] mb-1">

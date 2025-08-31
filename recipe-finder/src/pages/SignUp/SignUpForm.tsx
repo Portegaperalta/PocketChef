@@ -1,10 +1,7 @@
-import { Button } from '@/components/ui/button';
-import SignInFormButton from '@/components/ui/SignInFormButton';
-import { Eye } from 'lucide-react';
-import { EyeOff } from 'lucide-react';
-import { useState } from 'react';
+import { useState } from "react"
+import { Eye, EyeOff } from "lucide-react"
 
-export default function LoginForm() {
+export default function SignUpForm() {
   const [passwordInput, setPasswordInput] = useState("")
   const [isPasswordVisible, SetIsPasswordVisible] = useState(false)
 
@@ -21,9 +18,12 @@ export default function LoginForm() {
   }
 
   return (
-    <section className="login-form mt-8">
-      <form id="signInForm" action="#"
-        className="flex flex-col gap-6 items-center">
+    <section className="mt-8">
+      <form
+        action="#"
+        id="signUpForm"
+        className="flex flex-col items-center gap-6"
+      >
         <div className="username-input py-2 px-4 flex flex-row 
          items-center border-2 border-(--clr-secondary) rounded-md
          w-full md:max-w-90 lg:max-w-100">
@@ -35,12 +35,24 @@ export default function LoginForm() {
             outline-none w-full"
           />
         </div>
+        <div className="email-input py-2 px-4 flex flex-row 
+         items-center border-2 border-(--clr-secondary) rounded-md
+         w-full md:max-w-90 lg:max-w-100">
+          <input type="email"
+            id="userEmail"
+            placeholder="Email"
+            autoComplete="on"
+            className="text-(--clr-secondary) text-[1.1rem] font-[500]
+            outline-none w-full"
+          />
+        </div>
         <div className="password-input py-2 px-2 flex flex-row 
          items-center border-2 border-(--clr-secondary) rounded-md 
          w-full md:max-w-90 lg:max-w-100">
           <input type={`${isPasswordVisible ? `text` : `password`}`}
             id="userPassword"
             placeholder="Password"
+            pattern="^(?=.*[A-Z])(?=.*\d).{8,}$"
             autoComplete="off"
             onChange={updatePasswordInput}
             className="text-(--clr-secondary) text-[1.1rem] font-[500] 
@@ -59,8 +71,17 @@ export default function LoginForm() {
             <EyeOff />
           </div>
         </div>
-        <div className="submit-form-button text-center">
-          <SignInFormButton />
+        <div className="confirm-password-input py-2 px-2 flex flex-row 
+         items-center border-2 border-(--clr-secondary) rounded-md 
+         w-full md:max-w-90 lg:max-w-100">
+          <input type="password"
+            id="confirmUserPassword"
+            placeholder="Confirm Password"
+            autoComplete="off"
+            onChange={updatePasswordInput}
+            className="text-(--clr-secondary) text-[1.1rem] font-[500] 
+            outline-none w-full"
+          />
         </div>
       </form>
     </section>
