@@ -8,9 +8,10 @@ import SavedRecipes from './pages/Saved Recipes/SavedRecipes'
 import UserProfile from './pages/UserProfile/UserProfile'
 import RecipeInfo from './components/RecipeInfo'
 import BenefitRecipeInfo from './components/BenefitRecipeInfo'
+import SignIn from './pages/SignIn/SignIn'
 import { useEffect } from 'react'
 import { Toaster } from './components/ui/sonner'
-import Login from './pages/Login/Login'
+import SignUp from './pages/SignUp/SignUp'
 
 function App() {
 
@@ -39,7 +40,8 @@ function App() {
         <Route path='/Search-Recipe' element={<SearchRecipes />} />
         <Route path='/Recipe/:id' element={<RecipeInfo />} />
         <Route path='/Saved-Recipes' element={<SavedRecipes />} />
-        <Route path='/Login' element={<Login />} />
+        <Route path='/SignIn' element={<SignIn />} />
+        <Route path='/SignUp' element={<SignUp />} />
         <Route path='/Profile' element={<UserProfile />} />
       </Routes>
       <Footer />
