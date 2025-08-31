@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui/button';
+import SignInFormButton from '@/components/ui/SignInFormButton';
 import { Eye } from 'lucide-react';
 import { EyeOff } from 'lucide-react';
 import { useState } from 'react';
@@ -20,9 +22,11 @@ export default function LoginForm() {
 
   return (
     <section className="login-form mt-8">
-      <form id="loginForm" className="flex flex-col gap-4">
+      <form id="loginForm" action="#"
+        className="flex flex-col gap-6 items-center">
         <div className="username-input py-2 px-4 flex flex-row 
-        items-center border-2 border-(--clr-secondary) rounded-md">
+        items-center border-2 border-(--clr-secondary) rounded-md
+        w-full md:max-w-90 lg:max-w-100">
           <input type="text"
             id="username"
             placeholder="Username"
@@ -32,7 +36,8 @@ export default function LoginForm() {
           />
         </div>
         <div className="password-input py-2 px-2 flex flex-row 
-        items-center border-2 border-(--clr-secondary) rounded-md">
+        items-center border-2 border-(--clr-secondary) rounded-md 
+        w-full md:max-w-90 lg:max-w-100">
           <input type={`${isPasswordVisible ? `text` : `password`}`}
             id="userPassword"
             placeholder="Password"
@@ -53,6 +58,9 @@ export default function LoginForm() {
             cursor-pointer`}>
             <EyeOff />
           </div>
+        </div>
+        <div className="submit-form-button text-center">
+          <SignInFormButton />
         </div>
       </form>
     </section>
