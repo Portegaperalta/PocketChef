@@ -1,10 +1,10 @@
 import { Link } from "react-router"
+import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import AppLogo from "./AppLogo"
 import DropdownMenuButton from "./ui/DropdownMenuButton"
 import HeaderOptions from "./HeaderOptions"
 import { Bookmark, House, Search, UserRound } from "lucide-react"
-import { useState, useEffect } from "react"
 
 export default function Header() {
 
