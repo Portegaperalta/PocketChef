@@ -20,7 +20,7 @@ export default function SavedRecipesList() {
     setSavedRecipes(savedRecipesData)
   }, [])
 
-  if (!savedRecipes) {
+  if (!savedRecipes || savedRecipes.length === 0) {
     return (
       <div className="mt-10 mb-20 flex flex-col text-center items-center 
       lg:items-center">
