@@ -1,5 +1,6 @@
 import SavedRecipeCard from "@/components/SavedRecipeCard"
 import { Skeleton } from "@/components/ui/skeleton"
+import NoSavedRecipesBg from '../../images/empty-illustration.svg'
 import getFromSessionStorage from "@/utils/getFromSessionStorage"
 import { useEffect, useState } from "react"
 
@@ -22,14 +23,15 @@ export default function SavedRecipesList() {
 
   if (!savedRecipes) {
     return (
-      <div className="mt-10 mb-20">
-        <div className="flex flex-col gap-6 lg:gap-12 ">
-          <Skeleton className="h-[70px] w-full md:max-w-[340px] lg:max-w-[500px]" />
-          <Skeleton className="h-[70px] w-full md:max-w-[340px] lg:max-w-[500px]" />
-          <Skeleton className="h-[70px] w-full md:max-w-[340px] lg:max-w-[500px]" />
-          <Skeleton className="h-[70px] w-full md:max-w-[340px] lg:max-w-[500px]" />
-          <Skeleton className="h-[70px] w-full md:max-w-[340px] lg:max-w-[500px]" />
-        </div>
+      <div className="mt-10 mb-20 flex flex-col text-center items-center 
+      lg:items-center">
+        <img src={NoSavedRecipesBg}
+          alt="No saved recipes background"
+          className="w-full max-w-100"
+        />
+        <p className="text-(--clr-secondary) text-[1.1rem] font-[500] lg:text-[1.4rem]">
+          No saved Recipes!
+        </p>
       </div>
     )
   }
