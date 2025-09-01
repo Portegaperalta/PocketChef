@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import HomeAdd from '/images/Add-1.png'
+import HomeAdd from '../../../public/images/Add-1.png'
 
 export default function HomeMainAdd() {
   return (

@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import StartCookButton from "../../components/ui/StartCookButton";
-import WeeklyPickImage from "/images/weekly-pick-img.jpg"
+import WeeklyPickImage from "../../../public/images/weekly-pick-img.jpg"
 
 export default function HomeWeeklyPick() {
   return (
