@@ -24,7 +24,7 @@ export default function LoginForm() {
   }
 
   return (
-    <section className="login-form mt-8">
+    <section className="login-form mt-8 w-full">
       <form
         id="signInForm"
         action="#"
@@ -32,7 +32,7 @@ export default function LoginForm() {
         className="flex flex-col gap-6 items-center">
         <div className="username-input py-2 px-4 flex flex-row 
          items-center border-2 border-(--clr-secondary) rounded-md
-         w-full md:max-w-90 lg:max-w-100">
+         w-full max-w-90 lg:max-w-100">
           <input type="text"
             id="username"
             placeholder="Username"
@@ -44,7 +44,7 @@ export default function LoginForm() {
         </div>
         <div className="password-input py-2 px-2 flex flex-row 
          items-center border-2 border-(--clr-secondary) rounded-md 
-         w-full md:max-w-90 lg:max-w-100">
+         w-full max-w-90 lg:max-w-100">
           <input type={`${isPasswordVisible ? `text` : `password`}`}
             id="userPassword"
             placeholder="Password"
