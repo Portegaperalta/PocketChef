@@ -1,5 +1,4 @@
 import SavedRecipeCard from "@/components/SavedRecipeCard"
-import { Skeleton } from "@/components/ui/skeleton"
 import NoSavedRecipesBg from '../../images/empty-illustration.svg'
 import getFromSessionStorage from "@/utils/getFromSessionStorage"
 import { useEffect, useState } from "react"
