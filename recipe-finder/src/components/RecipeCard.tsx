@@ -41,7 +41,7 @@ export default function RecipeCard(props: RecipeCardProps) {
         <div className="recipe-card-info flex flex-row 
         items-center gap-4">
           <p className="text-(--clr-quick-silver) text-[1.1rem]
-          font-[500] hidden md:inline-block">
+          font-[500] hidden lg:inline-block">
             {`${capitalizeFirstLetter(props.diets[0])}`}
           </p>
           <RatingLabel rating={props.spoonacularScore} />
