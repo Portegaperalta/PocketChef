@@ -58,9 +58,7 @@ export default function Header() {
           <div className=""></div>
         </div>
         <div className="header-content-right">
-          <div className="header-content-options">
-            <HeaderOptions />
-          </div>
+          <HeaderOptions />
         </div>
       </div>
       <div className={`header-dropdown-menu py-8 px-4 w-full z-100 bg-(--clr-primary)
