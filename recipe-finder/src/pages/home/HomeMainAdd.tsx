@@ -8,7 +8,7 @@ export default function HomeMainAdd() {
       data-aos-once="true"
       className="home-main-content-ad">
       <Link to="/SignIn">
-        <img src="/images/Add-1.png" alt="home add" />
+        <img src="/images/home-add.png" alt="home add" />
       </Link>
     </div>
   )
