@@ -8,8 +8,7 @@
   <li>Vite</li>
 </ul>
 
-Screenshot:  
-<br>
+<h3>Screenshot: <h3/>
 <img src="/pocket-chef-sc.png" alt="PocketChef Screenshot"/>
 
 <h2>Features:</h2>
