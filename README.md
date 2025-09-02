@@ -1,11 +1,5 @@
 # PocketChef - Recipe finder app
 
-Live Preview: https://pocketchef-seven.vercel.app/
-
-Screenshot:  
-<br>
-<img src="/pocket-chef-sc.png" alt="PocketChef Screenshot"/>
-
 <h2>⚙️ Technologies used:</h2>
 <ul>
   <li>React</li>
@@ -13,6 +7,9 @@ Screenshot:
   <li>Javascript</li>
   <li>Vite</li>
 </ul>
+
+<h3>Screenshot: <h3/>
+<img src="/pocket-chef-sc.png" alt="PocketChef Screenshot"/>
 
 <h2>Features:</h2>
 
@@ -23,6 +20,10 @@ Screenshot:
   <li>Save your favorite recipes</li>
   <li>Fully responsive layout</li>
 </ul>
+
+<br>
+
+Live Preview: https://pocketchef-seven.vercel.app/
 
 <h2>📦 Installation</h2>
 
