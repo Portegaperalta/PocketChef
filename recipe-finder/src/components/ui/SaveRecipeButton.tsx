@@ -24,7 +24,7 @@ export default function SaveRecipeButton(props: Props) {
   const savedRecipes = JSON.parse(sessionStorage.getItem('savedRecipes') || "[]")
 
   const checkIfRecipeIsSaved = () => {
-    const recipeIsSaved = savedRecipes.some(savedRecipe => savedRecipe.id === props.id)
+    const recipeIsSaved = savedRecipes.some((savedRecipe: Recipe) => savedRecipe.id === props.id)
 
     if (recipeIsSaved === true) {
       setIsRecipeSaved(true)
