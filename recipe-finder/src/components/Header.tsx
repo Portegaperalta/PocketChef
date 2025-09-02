@@ -7,13 +7,12 @@ import HeaderOptions from "./HeaderOptions"
 import { Bookmark, House, Search, UserRound } from "lucide-react"
 
 export default function Header() {
-
+  const location = useLocation()
   const [menuDisplay, setMenuDisplay] = useState(false)
+
   const displayDropdownMenu = () => {
     setMenuDisplay(!menuDisplay)
   }
-
-  const location = useLocation()
 
   useEffect(() => {
     setMenuDisplay(!location)
