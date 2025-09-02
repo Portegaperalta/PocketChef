@@ -27,7 +27,6 @@ export default function SaveRecipeButton(props: Props) {
     const recipeIsSaved = savedRecipes.some((savedRecipe: Recipe) => savedRecipe.id === props.id)
     if (recipeIsSaved === true) {
       setIsRecipeSaved(true)
-      console.log("is saved")
     } else {
       setIsRecipeSaved(false)
     }
