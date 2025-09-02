@@ -1,5 +1,7 @@
+const pluralMeasures = ["cups", "cup", "Tbsps", "tsps", "oz", "head", "fl. oz"]
+
 export default function checkIngredientMeasure(measure: string) {
-  if (measure === "cups" || measure === "cup" || measure === "Tbsps") {
+  if (pluralMeasures.includes(measure) === true) {
     return "of"
   } else {
     return ""
