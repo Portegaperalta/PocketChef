@@ -1,10 +1,39 @@
 import { Link } from "react-router"
 import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
+import { Bookmark, House, Search, UserRound } from "lucide-react"
 import AppLogo from "./AppLogo"
 import DropdownMenuButton from "./ui/DropdownMenuButton"
 import HeaderOptions from "./HeaderOptions"
-import { Bookmark, House, Search, UserRound } from "lucide-react"
+
+type HeaderLink = {
+  name: string,
+  href: string,
+  icon: any,
+}
+
+const headerLinks: HeaderLink[] = [
+  {
+    name: "Home",
+    href: "/",
+    icon: House,
+  },
+  {
+    name: "Search Recipes",
+    href: "/Search-Recipe",
+    icon: Search,
+  },
+  {
+    name: "Saved Recipes",
+    href: "/Saved-Recipes",
+    icon: Bookmark,
+  },
+  {
+    name: "Sign In",
+    href: "/SignIn",
+    icon: UserRound,
+  },
+]
 
 export default function Header() {
   const location = useLocation()
@@ -38,44 +67,20 @@ export default function Header() {
         ${menuDisplay ? `block` : `hidden`} md:hidden`}>
         <nav>
           <ul className="flex flex-col gap-8">
-            <li>
-              <Link to="/">
-                <div className="home-link flex flex-row gap-1">
-                  <House color="#FFFF" />
-                  <p className="text-(--clr-white) text-[1.1rem] font-[500]">Home</p>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link to="/Search-Recipe">
-                <div className="recipe-link flex flex-row gap-1">
-                  <Search color="#FFFF" />
-                  <p className="text-(--clr-white) text-[1.1rem] font-[500]">
-                    Seach Recipes
-                  </p>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link to="/Saved-Recipes">
-                <div className="saved-recipes-link flex flex-row gap-1">
-                  <Bookmark color="#FFFFFF" />
-                  <p className="text-(--clr-white) text-[1.1rem] font-[500]">
-                    Saved Recipes
-                  </p>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link to="/SignIn">
-                <div className="account-link flex flex-row gap-1">
-                  <UserRound color="#FFFFFF" />
-                  <p className="text-(--clr-white) text-[1.1rem] font-[500]">
-                    Sign In
-                  </p>
-                </div>
-              </Link>
-            </li>
+            {
+              headerLinks.map((headerLink) => (
+                <li key={headerLink.name}>
+                  <Link to={headerLink.href}>
+                    <div className={`${headerLink.name}-link text-(--clr-white) flex flex-row gap-1`}>
+                      <headerLink.icon />
+                      <p className="text-[1.1rem] font-[500]">
+                        {headerLink.name}
+                      </p>
+                    </div>
+                  </Link>
+                </li>
+              ))
+            }
           </ul>
         </nav>
       </div>
