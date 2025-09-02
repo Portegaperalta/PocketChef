@@ -12,6 +12,7 @@ import DairyFreeIcon from './ui/DairyFreeIcon';
 import SaveRecipeButton from './ui/SaveRecipeButton'
 import ShareRecipeButton from './ui/ShareRecipeButton'
 import decimalToFraction from '@/utils/decimalToFraction'
+import checkIngredientMeasure from '@/utils/checkIngredientMeasure'
 
 type Ingredient = {
   aisle: string,
@@ -146,6 +147,7 @@ export default function BenefitRecipeInfo() {
                       {
                         `${decimalToFraction(ingredient.measures.us.amount)}
                          ${ingredient.measures.us.unitShort}
+                         ${checkIngredientMeasure(ingredient.measures.us.unitShort)}
                          ${ingredient.name}`
                       }
                     </div>
