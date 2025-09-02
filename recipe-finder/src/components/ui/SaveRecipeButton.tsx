@@ -9,6 +9,7 @@ type Props = {
 }
 
 export default function SaveRecipeButton(props: Props) {
+  const [isRecipeSaved, setIsRecipeSaved] = useState(false)
   const [buttonBackground, setButtonBackground] = useState(false)
 
   const savedRecipes = JSON.parse(sessionStorage.getItem('savedRecipes') || "[]")
