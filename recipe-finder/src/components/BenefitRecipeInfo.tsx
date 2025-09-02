@@ -116,7 +116,7 @@ export default function BenefitRecipeInfo() {
                 <SaveRecipeButton id={recipeInfo.id} />
               </div>
               <div className="share-recipe">
-                <ShareRecipeButton />
+                <ShareRecipeButton recipeId={recipeInfo.id} />
               </div>
             </div>
           </div>

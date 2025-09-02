@@ -139,7 +139,7 @@ export default function RecipeInfo() {
                 <SaveRecipeButton id={recipeInfo.id} />
               </div>
               <div className="share-recipe">
-                <ShareRecipeButton />
+                <ShareRecipeButton recipeId={recipeInfo.id} />
               </div>
             </div>
           </div>
