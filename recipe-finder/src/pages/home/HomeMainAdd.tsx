@@ -1,5 +1,4 @@
 import { Link } from 'react-router'
-import HomeAdd from '../../images/Add-1.png'
 
 export default function HomeMainAdd() {
   return (
@@ -9,7 +8,7 @@ export default function HomeMainAdd() {
       data-aos-once="true"
       className="home-main-content-ad">
       <Link to="/SignIn">
-        <img src={HomeAdd} alt="home add" />
+        <img src="/images/Add-1.png" alt="home add" />
       </Link>
     </div>
   )

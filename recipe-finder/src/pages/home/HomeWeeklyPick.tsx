@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import StartCookButton from "../../components/ui/StartCookButton";
-import WeeklyPickImage from "../../images/weekly-pick-img.jpg"
 
 export default function HomeWeeklyPick() {
   return (
@@ -8,7 +7,7 @@ export default function HomeWeeklyPick() {
       data-aos="fade-up"
       data-aos-duration="800"
       data-aos-once="true"
-      style={{ backgroundImage: `url(${WeeklyPickImage})` }}
+      style={{ backgroundImage: `url(/images/weekly-pick-img.jpg)` }}
       className="home-weekly-pick w-full max-w-152 bg-no-repeat bg-cover
       rounded-2xl"
     >

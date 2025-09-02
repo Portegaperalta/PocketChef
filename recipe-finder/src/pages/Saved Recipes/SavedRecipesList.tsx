@@ -1,5 +1,4 @@
 import SavedRecipeCard from "@/components/SavedRecipeCard"
-import EmptyKitchenBg from '../../images/empty-kitchen-svg.svg'
 import getFromSessionStorage from "@/utils/getFromSessionStorage"
 import { useEffect, useState } from "react"
 
@@ -24,7 +23,7 @@ export default function SavedRecipesList() {
     return (
       <div className="mt-10 mb-20 flex flex-col text-center items-center 
       lg:items-center">
-        <img src={EmptyKitchenBg}
+        <img src="/images/empty-kitchen-svg.svg"
           alt="No saved recipes background"
           className="w-full max-w-100"
         />

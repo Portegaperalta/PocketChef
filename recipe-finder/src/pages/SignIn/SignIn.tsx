@@ -1,6 +1,5 @@
 import SignInForm from "./SignInForm";
 import { Link } from "react-router";
-import ChefWithPizzaImg from '../../images/chef-with-pizza.svg'
 
 export default function Login() {
   return (
@@ -19,7 +18,7 @@ export default function Login() {
         </div>
       </section>
       <div className="">
-        <img src={ChefWithPizzaImg}
+        <img src="/images/chef-with-pizza.svg"
           alt="chef with pizza"
           className="size-100"
         />
