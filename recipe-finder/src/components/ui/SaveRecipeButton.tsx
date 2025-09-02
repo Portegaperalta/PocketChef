@@ -25,7 +25,6 @@ export default function SaveRecipeButton(props: Props) {
 
   const checkIfRecipeIsSaved = () => {
     const recipeIsSaved = savedRecipes.some((savedRecipe: Recipe) => savedRecipe.id === props.id)
-
     if (recipeIsSaved === true) {
       setIsRecipeSaved(true)
     } else {
@@ -38,13 +37,13 @@ export default function SaveRecipeButton(props: Props) {
     if (recipeData != null) {
       savedRecipes.push(recipeData)
       sessionStorage.setItem('savedRecipes', JSON.stringify(savedRecipes))
+      toast("Recipe saved")
     }
   }
 
-  const HandleButtonClick = async () => {
+  const HandleButtonClick = () => {
     setButtonBackground(!buttonBackground)
-    await saveRecipe()
-    toast("Recipe saved")
+    saveRecipe()
   }
 
   useEffect(() => {
