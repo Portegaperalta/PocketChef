@@ -68,7 +68,7 @@ export default function SaveRecipeButton({ id }: Props) {
     <motion.div whileTap={{ scale: 0.9 }}>
       <div
         onClick={HandleButtonClick}
-        title='Save recipe'
+        title={`${isRecipeSaved ? `unsave recipe` : `save recipe`}`}
         className={`save-recipe-button cursor-pointer`}>
         <Bookmark
           color='#F6B100'
