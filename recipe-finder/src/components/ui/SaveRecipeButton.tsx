@@ -28,6 +28,7 @@ export default function SaveRecipeButton({ id }: Props) {
     if (recipeData != null) {
       savedRecipes.push(recipeData)
       sessionStorage.setItem('savedRecipes', JSON.stringify(savedRecipes))
+      setIsRecipeSaved(true)
       toast("Recipe saved")
     }
   }
@@ -38,6 +39,7 @@ export default function SaveRecipeButton({ id }: Props) {
     if (savedRecipeIndex !== -1) {
       savedRecipes.splice(savedRecipeIndex, 1)
       sessionStorage.setItem('savedRecipes', JSON.stringify(savedRecipes))
+      setIsRecipeSaved(false)
       toast("Recipe Unsaved")
     }
   }
@@ -68,7 +70,7 @@ export default function SaveRecipeButton({ id }: Props) {
     <motion.div whileTap={{ scale: 0.9 }}>
       <div
         onClick={HandleButtonClick}
-        title={`${isRecipeSaved ? `unsave recipe` : `save recipe`}`}
+        title={`${isRecipeSaved ? `Unsave recipe` : `Save recipe`}`}
         className={`save-recipe-button cursor-pointer`}>
         <Bookmark
           color='#F6B100'
