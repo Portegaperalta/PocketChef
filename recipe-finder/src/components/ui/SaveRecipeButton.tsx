@@ -23,21 +23,21 @@ export default function SaveRecipeButton({ id }: Props) {
 
   const savedRecipes = JSON.parse(sessionStorage.getItem('savedRecipes') || "[]")
 
-  const checkIfRecipeIsSaved = () => {
-    const recipeIsSaved = savedRecipes.some((savedRecipe: Recipe) => savedRecipe.id === id)
-    if (recipeIsSaved === true) {
-      setIsRecipeSaved(true)
-    } else {
-      setIsRecipeSaved(false)
-    }
-  }
-
   const saveRecipe = async () => {
     const recipeData = await FetchRecipeById(id)
     if (recipeData != null) {
       savedRecipes.push(recipeData)
       sessionStorage.setItem('savedRecipes', JSON.stringify(savedRecipes))
       toast("Recipe saved")
+    }
+  }
+
+  const checkIfRecipeIsSaved = () => {
+    const recipeIsSaved = savedRecipes.some((savedRecipe: Recipe) => savedRecipe.id === id)
+    if (recipeIsSaved === true) {
+      setIsRecipeSaved(true)
+    } else {
+      setIsRecipeSaved(false)
     }
   }
 
