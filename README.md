@@ -26,7 +26,7 @@
 
 <br>
 
-Live Preview: https://pocketchef-seven.vercel.app/
+Live demo: https://pocketchef-seven.vercel.app/
 
 <h2>📦 Installation</h2>
 
