@@ -62,9 +62,7 @@ export default function Header() {
           <HeaderOptions />
         </div>
       </div>
-      <AnimatePresence
-        initial={false}
-      >
+      <AnimatePresence initial={false} >
         {menuDisplay ? (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
@@ -74,15 +72,16 @@ export default function Header() {
             style={{ overflow: "hidden" }}
             className={`header-dropdown-menu w-full z-100
             bg-(--clr-primary) md:hidden`}>
-            <nav className="py-8 px-4">
+            <nav className="py-6 px-2">
               <ul className="flex flex-col gap-8">
                 {
                   headerLinks.map((headerLink) => (
                     <li key={headerLink.name}>
                       <Link to={headerLink.href}>
-                        <div className={`${headerLink.name}-link text-(--clr-white) flex flex-row gap-1`}>
+                        <div className={`${headerLink.name}-link text-(--clr-white) flex 
+                        flex-row gap-1`}>
                           <headerLink.icon />
-                          <p className="text-[1.1rem] font-[500]">
+                          <p className="text-[1.2rem] font-[500]">
                             {headerLink.name}
                           </p>
                         </div>
