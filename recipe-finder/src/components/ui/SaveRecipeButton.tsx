@@ -32,6 +32,16 @@ export default function SaveRecipeButton({ id }: Props) {
     }
   }
 
+  const unsaveRecipe = () => {
+    const savedRecipeId = id
+    const savedRecipeIndex = savedRecipes.findIndex((savedRecipe: any) => savedRecipe.id === savedRecipeId)
+    if (savedRecipeIndex !== -1) {
+      savedRecipes.splice(savedRecipeIndex, 1)
+      sessionStorage.setItem('savedRecipes', JSON.stringify(savedRecipes))
+      toast("Recipe Unsaved")
+    }
+  }
+
   const checkIfRecipeIsSaved = () => {
     const recipeIsSaved = savedRecipes.some((savedRecipe: Recipe) => savedRecipe.id === id)
     if (recipeIsSaved === true) {
@@ -43,7 +53,11 @@ export default function SaveRecipeButton({ id }: Props) {
 
   const HandleButtonClick = () => {
     setButtonBackground(!buttonBackground)
-    saveRecipe()
+    if (isRecipeSaved === false) {
+      saveRecipe()
+    } else {
+      unsaveRecipe()
+    }
   }
 
   useEffect(() => {
