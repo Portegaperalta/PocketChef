@@ -1,5 +1,6 @@
 import { Link } from "react-router"
 import { useState, useEffect } from "react"
+import { AnimatePresence, motion } from 'motion/react'
 import { useLocation } from "react-router-dom"
 import { Bookmark, House, Search, UserRound } from "lucide-react"
 import AppLogo from "./AppLogo"
@@ -61,27 +62,39 @@ export default function Header() {
           <HeaderOptions />
         </div>
       </div>
-      <div className={`header-dropdown-menu py-8 px-4 w-full z-100 bg-(--clr-primary)
-        ${menuDisplay ? `block` : `hidden`} md:hidden`}>
-        <nav>
-          <ul className="flex flex-col gap-8">
-            {
-              headerLinks.map((headerLink) => (
-                <li key={headerLink.name}>
-                  <Link to={headerLink.href}>
-                    <div className={`${headerLink.name}-link text-(--clr-white) flex flex-row gap-1`}>
-                      <headerLink.icon />
-                      <p className="text-[1.1rem] font-[500]">
-                        {headerLink.name}
-                      </p>
-                    </div>
-                  </Link>
-                </li>
-              ))
-            }
-          </ul>
-        </nav>
-      </div>
+      <AnimatePresence
+        initial={false}
+      >
+        {menuDisplay ? (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            style={{ overflow: "hidden" }}
+            className={`header-dropdown-menu w-full z-100
+            bg-(--clr-primary) md:hidden`}>
+            <nav className="py-8 px-4">
+              <ul className="flex flex-col gap-8">
+                {
+                  headerLinks.map((headerLink) => (
+                    <li key={headerLink.name}>
+                      <Link to={headerLink.href}>
+                        <div className={`${headerLink.name}-link text-(--clr-white) flex flex-row gap-1`}>
+                          <headerLink.icon />
+                          <p className="text-[1.1rem] font-[500]">
+                            {headerLink.name}
+                          </p>
+                        </div>
+                      </Link>
+                    </li>
+                  ))
+                }
+              </ul>
+            </nav>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </header>
   )
 }
