@@ -6,6 +6,9 @@
   <li>TypeScript</li>
   <li>Javascript</li>
   <li>Vite</li>
+  <li>TailwindCSS</li>
+  <li>Shadcn (UI)</li>
+  <li>Motion</li>
 </ul>
 
 <h3>Screenshot: <h3/>
