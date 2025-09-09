@@ -17,14 +17,14 @@ type Props = {
   id: number
 }
 
-export default function SaveRecipeButton(props: Props) {
+export default function SaveRecipeButton({ id }: Props) {
   const [isRecipeSaved, setIsRecipeSaved] = useState(false)
   const [buttonBackground, setButtonBackground] = useState(false)
 
   const savedRecipes = JSON.parse(sessionStorage.getItem('savedRecipes') || "[]")
 
   const checkIfRecipeIsSaved = () => {
-    const recipeIsSaved = savedRecipes.some((savedRecipe: Recipe) => savedRecipe.id === props.id)
+    const recipeIsSaved = savedRecipes.some((savedRecipe: Recipe) => savedRecipe.id === id)
     if (recipeIsSaved === true) {
       setIsRecipeSaved(true)
     } else {
@@ -33,7 +33,7 @@ export default function SaveRecipeButton(props: Props) {
   }
 
   const saveRecipe = async () => {
-    const recipeData = await FetchRecipeById(props.id)
+    const recipeData = await FetchRecipeById(id)
     if (recipeData != null) {
       savedRecipes.push(recipeData)
       sessionStorage.setItem('savedRecipes', JSON.stringify(savedRecipes))
