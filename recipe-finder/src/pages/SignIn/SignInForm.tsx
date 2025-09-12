@@ -1,7 +1,9 @@
+import { useState } from 'react';
+import { useAuth } from '@/context/AuthContext';
+import { FirebaseError } from 'firebase/app';
 import SignInFormButton from '@/components/ui/SignInFormButton';
 import { Eye } from 'lucide-react';
 import { EyeOff } from 'lucide-react';
-import { useState } from 'react';
 
 export default function LoginForm() {
   const [_passwordInput, setPasswordInput] = useState("")
