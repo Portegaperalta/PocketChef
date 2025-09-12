@@ -51,14 +51,6 @@ export default function LoginForm() {
 
   return (
     <section className="login-form mt-8 w-full">
-      {/* error display */}
-      {
-        error && (
-          <div className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded w-full max-w-90 lg:max-w-100'>
-            {error}
-          </div>
-        )
-      }
       <form
         id="signInForm"
         action="#"
@@ -93,7 +85,16 @@ export default function LoginForm() {
             className="text-(--clr-secondary) text-[1.1rem] font-[500] 
             outline-none w-full"
           />
+
         </div>
+        {/* error display */}
+        {
+          error && (
+            <div className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded w-full max-w-90 lg:max-w-100'>
+              {error}
+            </div>
+          )
+        }
         <div className="submit-form-button text-center">
           <SignInFormButton />
         </div>

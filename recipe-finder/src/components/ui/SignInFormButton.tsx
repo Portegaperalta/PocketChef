@@ -1,16 +1,22 @@
 import { Button } from "./button";
 import { motion } from 'motion/react'
 
-export default function SignInFormButton() {
+interface SignInFormButtonProps {
+  loading?: boolean;
+}
+
+export default function SignInFormButton({ loading = false }: SignInFormButtonProps) {
   return (
-    <motion.div whileTap={{ scale: 0.9 }}>
+    <motion.div whileTap={loading ? {} : { scale: 0.9 }}>
       <Button type='submit'
         id="submitFormButton"
         className='text-(--clr-secondary) text-[1.1rem] font-[500] 
       px-4 bg-(--clr-primary) cursor-pointer hover:text-(--clr-white) 
       hover:bg-(--clr-primary)'
       >
-        Sign In
+        {
+          loading ? `Signing In...` : `Sign In`
+        }
       </Button>
     </motion.div>
   )
