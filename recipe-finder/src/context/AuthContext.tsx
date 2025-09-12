@@ -4,7 +4,6 @@ import {
     signInWithEmailAndPassword,
     signOut,
     onAuthStateChanged,
-    signInWithPopup,
 } from 'firebase/auth'
 import type { User, UserCredential } from 'firebase/auth';
 import { auth } from '../firebase/config'

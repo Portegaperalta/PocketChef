@@ -14,45 +14,45 @@ export default function LoginForm(): React.FC {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>): {
+  async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-}
+  }
 
-return (
-  <section className="login-form mt-8 w-full">
-    <form
-      id="signInForm"
-      action="#"
-      onSubmit={handleFormSubmit}
-      className="flex flex-col gap-6 items-center">
-      <div className="username-input py-2 px-4 flex flex-row 
+  return (
+    <section className="login-form mt-8 w-full">
+      <form
+        id="signInForm"
+        action="#"
+        onSubmit={handleFormSubmit}
+        className="flex flex-col gap-6 items-center">
+        <div className="username-input py-2 px-4 flex flex-row 
          items-center border-2 border-(--clr-secondary) rounded-md
          w-full max-w-90 lg:max-w-100">
-        <input type="text"
-          id="username"
-          placeholder="Username"
-          autoComplete="off"
-          required
-          className="text-(--clr-secondary) text-[1.1rem] font-[500]
+          <input type="text"
+            id="username"
+            placeholder="Username"
+            autoComplete="off"
+            required
+            className="text-(--clr-secondary) text-[1.1rem] font-[500]
             outline-none w-full"
-        />
-      </div>
-      <div className="password-input py-2 px-2 flex flex-row 
+          />
+        </div>
+        <div className="password-input py-2 px-2 flex flex-row 
          items-center border-2 border-(--clr-secondary) rounded-md 
          w-full max-w-90 lg:max-w-100">
-        <input type={`password`}
-          id="userPassword"
-          placeholder="Password"
-          autoComplete="off"
-          required
-          className="text-(--clr-secondary) text-[1.1rem] font-[500] 
+          <input type={`password`}
+            id="userPassword"
+            placeholder="Password"
+            autoComplete="off"
+            required
+            className="text-(--clr-secondary) text-[1.1rem] font-[500] 
             outline-none w-full"
-        />
-      </div>
-      <div className="submit-form-button text-center">
-        <SignInFormButton />
-      </div>
-    </form>
-  </section>
-)
+          />
+        </div>
+        <div className="submit-form-button text-center">
+          <SignInFormButton />
+        </div>
+      </form>
+    </section>
+  )
 }
