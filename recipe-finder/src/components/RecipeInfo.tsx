@@ -100,7 +100,7 @@ export default function RecipeInfo() {
   }
 
   return (
-    <main className="px-6 py-26 md:px-16 lg:px-30">
+    <main className="px-6 py-6 md:px-16 lg:px-30">
       <div className="recipe-info-content flex-col space-y-8 lg:space-y-6">
         <div className="recipe-info-top flex flex-col gap-6">
           <div className="recipe-info-name">

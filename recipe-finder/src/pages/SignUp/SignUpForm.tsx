@@ -41,7 +41,7 @@ export default function SignUpForm() {
   }
 
   return (
-    <section className="mt-8">
+    <section className="sign-up-form">
       <form
         id="signUpForm"
         action="#"

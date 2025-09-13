@@ -55,7 +55,7 @@ export default function LoginForm() {
   }
 
   return (
-    <section className="login-form mt-8 w-full">
+    <section className="sign-in-form w-full">
       <form
         id="signInForm"
         action="#"
