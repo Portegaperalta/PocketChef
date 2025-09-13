@@ -4,6 +4,8 @@ import {
     signInWithEmailAndPassword,
     signOut,
     onAuthStateChanged,
+    updateEmail,
+    updatePassword,
 } from 'firebase/auth'
 import type { User, UserCredential } from 'firebase/auth';
 import { auth } from '../firebase/config'
@@ -33,9 +35,30 @@ export function AuthProvider({ children }: AuthProviderProps) {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
+    //Register function
+    function register(email: string, password: string) {
+        return createUserWithEmailAndPassword(auth, email, password);
+    }
+
     // Logout function
     function logout(): Promise<void> {
         return signOut(auth);
+    }
+
+    //reset password
+    function resetPassword(email: string) {
+        if (currentUser) {
+            return updateEmail(currentUser, email);
+        }
+        return Promise.reject('No user logged in')
+    }
+
+    //Update password
+    function updateUserPassword(password: string) {
+        if (currentUser) {
+            return updatePassword(currentUser, password);
+        }
+        return Promise.reject('No user logged in')
     }
 
     useEffect(() => {
@@ -51,7 +74,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
         currentUser,
         signup,
         login,
-        logout
+        register,
+        logout,
+        loading,
+        resetPassword,
+        updateUserPassword
     };
 
     return (

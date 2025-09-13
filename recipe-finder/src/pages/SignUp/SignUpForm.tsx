@@ -1,25 +1,37 @@
 import { useState, useRef } from "react"
 import { Eye, EyeOff } from "lucide-react"
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from "@/context/AuthContext"
 import SignUpFormButton from "@/components/ui/SignUpFormButton"
 
 export default function SignUpForm() {
-  const [_passwordInput, setPasswordInput] = useState("")
-  const [isPasswordVisible, SetIsPasswordVisible] = useState(false)
 
-  const updatePasswordInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPasswordInput(e.target.value)
-  }
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const passwordConfirmRef = useRef<HTMLInputElement>(null);
+  const { register } = useAuth();
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const showPassword = () => {
-    SetIsPasswordVisible(true)
-  }
+  async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
 
-  const hidePassword = () => {
-    SetIsPasswordVisible(false)
-  }
+    if (!emailRef.current || !passwordRef.current || !passwordRef.current) return;
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    if (passwordRef.current.value !== passwordConfirmRef.current?.value) {
+      return setError('Passwords do not match');
+    }
+
+    try {
+      setError('');
+      setLoading(true);
+      await register(emailRef.current.value, passwordRef.current.value);
+      navigate('/');
+    } catch (error: any) {
+      setError(`Failed to create an account: ${error.message}`)
+    }
+    setLoading(false);
   }
 
   return (
@@ -58,26 +70,21 @@ export default function SignUpForm() {
         <div className="password-input py-2 px-2 flex flex-row 
          items-center border-2 border-(--clr-secondary) rounded-md 
          w-full md:max-w-90 lg:max-w-100">
-          <input type={`${isPasswordVisible ? `text` : `password`}`}
+          <input type={`password`}
             id="userPassword"
             placeholder="Password"
             minLength={8}
             autoComplete="off"
             required
-            onChange={updatePasswordInput}
             className="text-(--clr-secondary) text-[1.1rem] font-[500] 
             outline-none w-full"
           />
           <div
-            onClick={showPassword}
-            className={`show-password-btn ${isPasswordVisible ? `hidden` : `inline-block`} 
-            cursor-pointer`}>
+            className={`show-password-btn hidden cursor-pointer`}>
             <Eye />
           </div>
           <div
-            onClick={hidePassword}
-            className={`hide-password-btn hidden ${isPasswordVisible ? `inline-block` : `hidden`} 
-            cursor-pointer`}>
+            className={`hide-password-btn hidden cursor-pointer`}>
             <EyeOff />
           </div>
         </div>
@@ -88,7 +95,6 @@ export default function SignUpForm() {
             id="confirmUserPassword"
             placeholder="Confirm Password"
             autoComplete="off"
-            onChange={updatePasswordInput}
             className="text-(--clr-secondary) text-[1.1rem] font-[500] 
             outline-none w-full"
           />
@@ -96,5 +102,5 @@ export default function SignUpForm() {
         <SignUpFormButton />
       </form>
     </section>
-  )
+  );
 }
