@@ -1,7 +1,8 @@
 import { useState, useRef } from "react"
-import { Eye, EyeOff } from "lucide-react"
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from "@/context/AuthContext"
+import ShowPasswordButton from "@/components/ui/ShowPasswordButton"
+import HidePasswordButton from "@/components/ui/HidePasswordButton"
 import SignUpFormButton from "@/components/ui/SignUpFormButton"
 
 export default function SignUpForm() {
@@ -12,7 +13,12 @@ export default function SignUpForm() {
   const { register } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const navigate = useNavigate();
+
+  const handlePasswordShow = () => {
+    setShowPassword(!showPassword);
+  }
 
   async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -72,7 +78,7 @@ export default function SignUpForm() {
          items-center border-2 border-(--clr-secondary) rounded-md 
          w-full md:max-w-90 lg:max-w-100">
           <input
-            type={`password`}
+            type={`${showPassword ? `text` : `password`}`}
             id="userPassword"
             ref={passwordRef}
             placeholder="Password"
@@ -84,12 +90,10 @@ export default function SignUpForm() {
             outline-none w-full"
           />
           <div
-            className={`show-password-btn hidden cursor-pointer`}>
-            <Eye />
-          </div>
-          <div
-            className={`hide-password-btn hidden cursor-pointer`}>
-            <EyeOff />
+            onClick={handlePasswordShow}
+            className="password-input-options flex flex-row items-center">
+            <ShowPasswordButton isPasswordVisible={showPassword} />
+            <HidePasswordButton isPasswordVisible={showPassword} />
           </div>
         </div>
         <div className="confirm-password-input py-2 px-2 flex flex-row 

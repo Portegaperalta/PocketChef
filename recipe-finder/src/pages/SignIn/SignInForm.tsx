@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { FirebaseError } from 'firebase/app';
-import SignInFormButton from '@/components/ui/SignInFormButton';
 import { useNavigate } from 'react-router';
+import SignInFormButton from '@/components/ui/SignInFormButton';
+import ShowPasswordButton from '@/components/ui/ShowPasswordButton';
+import HidePasswordButton from '@/components/ui/HidePasswordButton';
 
 export default function LoginForm() {
   const [email, setEmail] = useState<string>('');
@@ -12,6 +14,10 @@ export default function LoginForm() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const { login } = useAuth();
   const navigate = useNavigate();
+
+  const handlePasswordShow = () => {
+    setShowPassword(!showPassword);
+  }
 
   async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -84,9 +90,14 @@ export default function LoginForm() {
             className="text-(--clr-secondary) text-[1.1rem] font-[500] 
             outline-none w-full"
           />
-
+          <div
+            onClick={handlePasswordShow}
+            className="password-input-options flex flex-row items-center">
+            <ShowPasswordButton isPasswordVisible={showPassword} />
+            <HidePasswordButton isPasswordVisible={showPassword} />
+          </div>
         </div>
-        {/* error display */}
+        {/* Sign in error display */}
         {
           error && (
             <div className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded w-full max-w-90 lg:max-w-100'>
