@@ -28,7 +28,6 @@ export default function SavedRecipeCard(props: Props) {
           />
         </div>
         <div className="benefit-recipe-info lg:basis-130 flex items-center">
-
           <div className="benefit-recipe-text">
             <h3 className='benefit-recipe-title text-(--clr-secondary) 
             font-[600] mb-1 group-hover:text-(--clr-primary) lg:text-[1.4rem]
