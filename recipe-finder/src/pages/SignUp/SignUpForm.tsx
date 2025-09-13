@@ -1,6 +1,6 @@
 import { useState, useRef } from "react"
 import { Eye, EyeOff } from "lucide-react"
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useAuth } from "@/context/AuthContext"
 import SignUpFormButton from "@/components/ui/SignUpFormButton"
 
@@ -11,7 +11,7 @@ export default function SignUpForm() {
   const passwordConfirmRef = useRef<HTMLInputElement>(null);
   const { register } = useAuth();
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [_loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -99,6 +99,14 @@ export default function SignUpForm() {
             outline-none w-full"
           />
         </div>
+        {/* error display */}
+        {
+          error && (
+            <div className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded w-full max-w-90 lg:max-w-100'>
+              {error}
+            </div>
+          )
+        }
         <SignUpFormButton />
       </form>
     </section>

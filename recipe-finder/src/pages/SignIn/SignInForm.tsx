@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { FirebaseError } from 'firebase/app';
 import SignInFormButton from '@/components/ui/SignInFormButton';
-import { Eye, EyeOff } from 'lucide-react';
 import { useNavigate } from 'react-router';
 
 export default function LoginForm() {
@@ -95,9 +94,7 @@ export default function LoginForm() {
             </div>
           )
         }
-        <div className="submit-form-button text-center">
-          <SignInFormButton />
-        </div>
+        <SignInFormButton />
       </form>
     </section>
   )
