@@ -10,7 +10,7 @@ export default function SignUpFormButton({ loading }: SignUpFormButtonProps) {
     <motion.div whileTap={loading ? {} : { scale: 0.9 }}>
       <Button
         id="submitFormButton"
-        type='submit'
+        type="submit"
         disabled={loading}
         className='text-(--clr-secondary) text-[1.1rem] font-[500] 
         px-4 bg-(--clr-primary) cursor-pointer hover:text-(--clr-white) 

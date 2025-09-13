@@ -11,7 +11,7 @@ export default function SignUpForm() {
   const passwordConfirmRef = useRef<HTMLInputElement>(null);
   const { register } = useAuth();
   const [error, setError] = useState('');
-  const [_loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -60,6 +60,7 @@ export default function SignUpForm() {
          w-full md:max-w-90 lg:max-w-100">
           <input type="email"
             id="userEmail"
+            ref={emailRef}
             placeholder="Email"
             autoComplete="on"
             required
@@ -70,12 +71,15 @@ export default function SignUpForm() {
         <div className="password-input py-2 px-2 flex flex-row 
          items-center border-2 border-(--clr-secondary) rounded-md 
          w-full md:max-w-90 lg:max-w-100">
-          <input type={`password`}
+          <input
+            type={`password`}
             id="userPassword"
+            ref={passwordRef}
             placeholder="Password"
             minLength={8}
-            autoComplete="off"
+            autoComplete="new-password"
             required
+            disabled={loading}
             className="text-(--clr-secondary) text-[1.1rem] font-[500] 
             outline-none w-full"
           />
@@ -91,8 +95,10 @@ export default function SignUpForm() {
         <div className="confirm-password-input py-2 px-2 flex flex-row 
          items-center border-2 border-(--clr-secondary) rounded-md 
          w-full md:max-w-90 lg:max-w-100">
-          <input type="password"
+          <input
+            type="password"
             id="confirmUserPassword"
+            ref={passwordConfirmRef}
             placeholder="Confirm Password"
             autoComplete="off"
             className="text-(--clr-secondary) text-[1.1rem] font-[500] 
