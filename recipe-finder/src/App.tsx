@@ -12,6 +12,7 @@ import SignIn from './pages/SignIn/SignIn'
 import { useEffect } from 'react'
 import { Toaster } from './components/ui/sonner'
 import SignUp from './pages/SignUp/SignUp'
+import MobileBar from './components/MobileBar'
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
         <Route path='/Profile' element={<UserProfile />} />
       </Routes>
       <Footer />
+      <MobileBar />
     </>
   )
 }
