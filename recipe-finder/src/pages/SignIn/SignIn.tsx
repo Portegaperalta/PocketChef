@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export default function Login() {
   return (
-    <main className="login flex flex-col items-center gap-6 px-6 py-6 md:px-16
+    <main className="login h-full flex flex-col items-center gap-6 px-6 py-6 md:px-16
      lg:px-30">
       <SignInForm />
       <section className="sign-up-link mt-8">

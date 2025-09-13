@@ -3,7 +3,7 @@ import SignUpForm from "./SignUpForm";
 
 export default function SignUp() {
   return (
-    <main className="sign-up px-6 py-6 md:px-16 lg:px-30">
+    <main className="sign-up px-6 py-6 h-full md:px-16 lg:px-30">
       <SignUpForm />
       <section className="sign-in-link mt-8">
         <div className="text-center">
